@@ -1,0 +1,130 @@
+swagger: '2.0'
+info:
+  title: 财务云友报账参照 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+
+paths:
+
+  /refbase_ctr/queryRefJSON:
+    x-swagger-router-controller: refbase_ctr_queryrefjson
+    post:
+      description: 参照查询接口
+      tags:
+      - 参照
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/RequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+  /userCenter/queryUserAndDeptByDeptPk:
+    x-swagger-router-controller: usercenter_queryuseranddeptbydeptpk
+    post:
+      description: |
+        用户参照查询接口
+        这个参照比较另类，不在参照的通用查询接口中
+        http://git.yonyou.com/sscplatform/fc_doc/blob/master/ybz_user_query.md#2%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7%E7%BC%96%E7%A0%81-%E6%9F%A5%E8%AF%A2%E4%BA%BA%E5%91%98%E5%90%8D%E7%A7%B0%E4%BA%BA%E5%91%98id%E4%BA%BA%E5%91%98code%E6%8E%A5%E5%8F%A3
+      tags:
+      - 用户参照
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/RequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+definitions:
+
+  RequestModel:
+    type: object
+    required:
+    - refCode
+    - refType
+    - rootName
+    properties:
+      refCode:
+        type: string
+        description: 基础档案id，比如`dept`
+      refType:
+        type: string
+        description: 参照的UI类型，比如`tree`
+      rootName:
+        type: string
+        description: 不知道干啥用的，比如`部门`
+  SuccessResponseModel:
+    type: object
+    required:
+    - data
+    properties:
+      data:
+        type: array
+        description: 参照字段模型
+        items:
+          $ref: '#/definitions/ReferFieldModel'
+
+  ReferFieldModel:
+    type: object
+    required:
+    - id
+    - name
+    - code
+    properties:
+      id:
+        type: string
+        description: id
+      isLeaf:
+        type: string
+        description: id
+      name:
+        type: string
+        description: id
+      pid:
+        type: string
+        description: id
+      code:
+        type: string
+        description: id
+    example:
+      
+      id: 'E6CB6CBE-C701-48EC-A3EB-C823DF8DBEED'
+      isLeaf: 'true'
+      name: '服务中心'
+      pid: 'FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6'
+      code: '02'
+

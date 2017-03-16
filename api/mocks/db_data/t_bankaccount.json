@@ -1,0 +1,125 @@
+{
+  "head": [
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 40,
+      "lable": "主键",
+      "refinfocode": null,
+      "id": "id",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 50,
+      "lable": "编码",
+      "refinfocode": null,
+      "id": "code",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 100,
+      "lable": "名称",
+      "refinfocode": null,
+      "id": "name",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "组织",
+      "refinfocode": "org",
+      "id": "pk_org",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCORG0000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "开户银行",
+      "refinfocode": "bank",
+      "id": "depositbank",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCBANK000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "所属银行",
+      "refinfocode": "bank",
+      "id": "bank",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCBANK000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 10,
+      "lable": "默认账户",
+      "refinfocode": null,
+      "id": "defaultaccount",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 4,
+      "length": 10,
+      "lable": "启用",
+      "refinfocode": null,
+      "id": "enable",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 400,
+      "lable": "备注",
+      "refinfocode": null,
+      "id": "description",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 10,
+      "lable": "账户性质",
+      "refinfocode": null,
+      "id": "accountproperty",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 10,
+      "lable": "账户类型",
+      "refinfocode": null,
+      "id": "accounttype",
+      "digit": 0,
+      "refinfo": null
+    }
+  ],
+  "body": [
+    {
+      "id": "",
+      "code": "1",
+      "name": "1",
+      "defaultaccount": "",
+      "description": "",
+      "accountproperty": "NORMAL",
+      "accounttype": "1"
+    }
+  ]
+}

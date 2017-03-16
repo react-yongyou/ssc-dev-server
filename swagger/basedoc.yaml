@@ -1,0 +1,2015 @@
+swagger: '2.0'
+info:
+  title: SSC 3.0 基础档案 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+paths:
+  /plat/basedoc:
+    # binds swagger app logic to a route
+    x-swagger-router-controller: basedocs
+    get:
+      description: 返回所有基础档案类型
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/BaseDocsModel'
+
+  /ficloud_pub/initgrid:
+    x-swagger-router-controller: ficloud_pub_initgrid
+    post:
+      description: 查询基本档案字段定义
+      tags:
+      - 通用接口
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: doctype
+        in: formData
+        type: string
+        description: |
+          基础档案类型，包括：
+          - dept
+          - renyuan
+          - xiangmu
+          - feiyongxiangmu
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessModel'
+        '404':
+          description: Not Found
+
+  /ficloud_pub/querydoctype:
+    x-swagger-router-controller: ficloud_pub_querydoctype
+    post:
+      description: 档案类型查询接口
+      tags:
+      - 通用接口
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: condition
+        in: formData
+        type: string
+        description: |
+          查询条件SQL部分语句
+          比如： 
+          ```
+          entityid IN ('G001ZM0000BASEDOCDEPT000000000000000', 'G001ZM0000BASEDOCPERSON0000000000000', 'G001ZM0000BASEDOCORG0000000000000000')
+          ```
+          其中每个id是通过`/ficloud_pub/initgrid`接口获取的数据中：
+          ```
+          {
+            "id": "parentid",
+            "lable": "上级部门",
+            "datatype": 5,
+            "length": 40,
+            "digit": 0,
+            "refinfo": "G001ZM0000BASEDOCDEPT000000000000000",
+            "enumdata": null
+          },
+          ```
+          其中的`refinfo`字段获取的。
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+
+# 每个基础档案有三个接口
+# - query
+# - save
+# - delete
+
+# 所有基础档案类型 - start
+
+  /accbook/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 账簿查询接口
+      tags:
+        - 账簿
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accbook/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 账簿删除接口
+      tags:
+        - 账簿
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 账簿主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accbook/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 账簿修改接口
+      tags:
+        - 账簿
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 账簿新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /accelement/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 会计要素查询接口
+      tags:
+        - 会计要素
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accelement/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 会计要素删除接口
+      tags:
+        - 会计要素
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计要素主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accelement/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 会计要素修改接口
+      tags:
+        - 会计要素
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计要素新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /accperiod/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 会计期间查询接口
+      tags:
+        - 会计期间
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accperiod/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 会计期间删除接口
+      tags:
+        - 会计期间
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计期间主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accperiod/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 会计期间修改接口
+      tags:
+        - 会计期间
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计期间新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /accperiodscheme/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 会计期间方案查询接口
+      tags:
+        - 会计期间方案
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accperiodscheme/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 会计期间方案删除接口
+      tags:
+        - 会计期间方案
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计期间方案主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accperiodscheme/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 会计期间方案修改接口
+      tags:
+        - 会计期间方案
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计期间方案新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /accstandard/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 会计准则查询接口
+      tags:
+        - 会计准则
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accstandard/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 会计准则删除接口
+      tags:
+        - 会计准则
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计准则主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accstandard/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 会计准则修改接口
+      tags:
+        - 会计准则
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 会计准则新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /accsubjectchart/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 账簿科目表查询接口
+      tags:
+        - 账簿科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /accsubjectchart/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 账簿科目表删除接口
+      tags:
+        - 账簿科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 账簿科目表主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /accsubjectchart/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 账簿科目表修改接口
+      tags:
+        - 账簿科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 账簿科目表新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /bank/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 银行查询接口
+      tags:
+        - 银行
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /bank/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 银行删除接口
+      tags:
+        - 银行
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /bank/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 银行修改接口
+      tags:
+        - 银行
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /bankaccount/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 银行账户查询接口
+      tags:
+        - 银行账户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /bankaccount/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 银行账户删除接口
+      tags:
+        - 银行账户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行账户主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /bankaccount/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 银行账户修改接口
+      tags:
+        - 银行账户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行账户新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /bankclass/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 银行类别查询接口
+      tags:
+        - 银行类别
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /bankclass/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 银行类别删除接口
+      tags:
+        - 银行类别
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行类别主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /bankclass/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 银行类别修改接口
+      tags:
+        - 银行类别
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 银行类别新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /currency/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 币种查询接口
+      tags:
+        - 币种
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /currency/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 币种删除接口
+      tags:
+        - 币种
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 币种主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /currency/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 币种修改接口
+      tags:
+        - 币种
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 币种新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /dept/query:
+    x-swagger-router-controller: dept_query
+    post:
+      description: 部门查询接口
+      tags:
+        - 部门
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/DeptQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessModel'
+        '404':
+          description: Not Found
+  /dept/delete:
+    x-swagger-router-controller: dept_delete
+    post:
+      description: 部门删除接口
+      tags:
+        - 部门
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 部门主键
+          schema:
+            $ref: '#/definitions/DeptDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /dept/save:
+    x-swagger-router-controller: dept_save
+    post:
+      description: 部门修改接口
+      tags:
+      - 部门
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 部门新数据
+          schema:
+            $ref: '#/definitions/DeptSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/DeptSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /feeitem/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 费用项目查询接口
+      tags:
+        - 费用项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /feeitem/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 费用项目删除接口
+      tags:
+        - 费用项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 费用项目主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /feeitem/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 费用项目修改接口
+      tags:
+        - 费用项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 费用项目新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /feeitemclass/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 费用项目类型查询接口
+      tags:
+        - 费用项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /feeitemclass/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 费用项目类型删除接口
+      tags:
+        - 费用项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 费用项目类型主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /feeitemclass/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 费用项目类型修改接口
+      tags:
+        - 费用项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 费用项目类型新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /measuredoc/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 数量查询接口
+      tags:
+        - 数量
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /measuredoc/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 数量删除接口
+      tags:
+        - 数量
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 数量主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /measuredoc/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 数量修改接口
+      tags:
+        - 数量
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 数量新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /multidimension/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 科目多维结构查询接口
+      tags:
+        - 科目多维结构
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /multidimension/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 科目多维结构删除接口
+      tags:
+        - 科目多维结构
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 科目多维结构主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /multidimension/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 科目多维结构修改接口
+      tags:
+        - 科目多维结构
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 科目多维结构新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /project/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 项目查询接口
+      tags:
+        - 项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /project/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 项目删除接口
+      tags:
+        - 项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 项目主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /project/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 项目修改接口
+      tags:
+        - 项目
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 项目新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /projectclass/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 项目类型查询接口
+      tags:
+        - 项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /projectclass/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 项目类型删除接口
+      tags:
+        - 项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 项目类型主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /projectclass/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 项目类型修改接口
+      tags:
+        - 项目类型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 项目类型新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /subjectchart/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 科目表查询接口
+      tags:
+        - 科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /subjectchart/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 科目表删除接口
+      tags:
+        - 科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 科目表主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /subjectchart/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 科目表修改接口
+      tags:
+        - 科目表
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 科目表新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /user/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 用户查询接口
+      tags:
+        - 用户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /user/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 用户删除接口
+      tags:
+        - 用户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 用户主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /user/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 用户修改接口
+      tags:
+        - 用户
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 用户新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+
+  /valuerang/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 值集查询接口
+      tags:
+        - 值集
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /valuerang/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 值集删除接口
+      tags:
+        - 值集
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 值集主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /valuerang/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 值集修改接口
+      tags:
+        - 值集
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 值集新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+# 所有基础档案类型 - end
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+  /plat/basedoc/qrybd:
+    x-swagger-router-controller: qrybd
+    get:
+      description: 查询基本档案（废弃接口）
+      tags:
+        - BaseDoc
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessModel'
+        '404':
+          description: Not Found
+      parameters:
+        - required: true
+          type: string
+          name: id
+          in: query
+          description: 基础档案ID
+      produces:
+        - application/json
+definitions:
+  CommonQueryReqModel:
+    type: object
+    required:
+    - condition
+    - begin
+    - groupnum
+    properties:
+      condition:
+        type: string
+        description: 查询条件
+      paras:
+        type: string
+        description: 查询条件参数，非必须
+      fields:
+        type: string
+        description: 查询字段，非必须，空则查询全部字段
+      begin:
+        type: integer
+        description: 起始位置，用于分页。从0开始
+      groupnum:
+        type: integer
+        description: 分页数量
+  DeptQueryReqModel:
+    type: object
+    required:
+    - condition
+    - begin
+    - groupnum
+    properties:
+      condition:
+        type: string
+        description: 查询条件
+      paras:
+        type: string
+        description: 查询条件参数，非必须
+      fields:
+        type: string
+        description: 查询字段，非必须，空则查询全部字段
+      begin:
+        type: integer
+        description: 起始位置，用于分页。从0开始
+      groupnum:
+        type: integer
+        description: 分页数量
+  CommonDeleteReqModel:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        description: 40位主键
+  DeptDeleteReqModel:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        description: 40位主键
+  CommonSaveReqModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 部门主键，当为空的时候，新增，不为空，则修改
+      org:
+        type: string
+        description: 组织
+      code:
+        type: string
+        description: 部门编码
+      name:
+        type: string
+        description: 部门名称
+      parentid:
+        type: string
+        description: 上级部门
+      personal:
+        type: string
+        description: 主管
+      enable:
+        type: boolean
+        description: 启用
+      description:
+        type: string
+        description: 备注
+  DeptSaveReqModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 部门主键，当为空的时候，新增，不为空，则修改
+      org:
+        type: string
+        description: 组织
+      code:
+        type: string
+        description: 部门编码
+      name:
+        type: string
+        description: 部门名称
+      name2:
+        type: string
+        description: name2
+      name3:
+        type: string
+        description: name3
+      name4:
+        type: string
+        description: name4
+      name5:
+        type: string
+        description: name5
+      name6:
+        type: string
+        description: name6
+      parentid:
+        type: string
+        description: 上级部门
+      personal:
+        type: string
+        description: 主管
+      enable:
+        type: boolean
+        description: 启用
+      description:
+        type: string
+        description: 备注
+  BaseDocsModel:
+    type: array
+    items:
+      $ref: "#/definitions/BaseDocsItemModel"
+  BaseDocsItemModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 基础档案类型ID
+      name:
+        type: string
+        description: 基础档案类型名称（中文）
+  CommonDeleteSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+  CommonSaveSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        properties:
+          head:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 主键，当为空的时候，新增，不为空，则修改
+              code:
+                type: string
+                description: 编码
+              name:
+                type: string
+                description: 名称
+              enable:
+                type: string
+                description: 启用
+              description:
+                type: string
+                description: 备注
+  DeptSaveSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        properties:
+          head:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 部门主键，当为空的时候，新增，不为空，则修改
+              org:
+                type: string
+                description: 组织
+              code:
+                type: string
+                description: 部门编码
+              name:
+                type: string
+                description: 部门名称
+              parentid:
+                type: string
+                description: 上级部门
+              personal:
+                type: string
+                description: 主管
+              enable:
+                type: string
+                description: 启用
+              description:
+                type: string
+                description: 备注
+  CommonSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        - body
+        properties:
+          head:
+            type: array
+            description: 表格字段模型
+            items:
+              $ref: '#/definitions/FieldModel'
+          body:
+            type: array
+            description: 表格行模型
+            items:
+              $ref: '#/definitions/RowDetail'
+  SuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        - body
+        properties:
+          head:
+            type: array
+            description: 表格字段模型
+            items:
+              $ref: '#/definitions/FieldModel'
+          body:
+            type: array
+            description: 表格行模型
+            items:
+              $ref: '#/definitions/RowDetail'
+  FieldTypeModel:
+    type: string
+    description: |
+      字段类型，复用iWeb原有类型，出现问题再进行改进。
+      - `string 0`, 文本类型
+      - `integer 1`, 整数类型
+      - `double 2`, 数量(double)类型
+      - `date 3`, 日期类型，不带带具体时分秒
+      - `datetime 8`, 日期类型
+      - `boolean 4`, 逻辑类型，
+      - `enum 6`, 枚举类型，
+      - `ref 5`, 参照类型
+      - `text 9`, 文本区域类型
+    enum:
+    - string
+    - integer
+    - double
+    - date
+    - datetime
+    - boolean
+    - enum
+    - ref
+    - text
+  FieldModel:
+    type: object
+    required:
+    - lable
+    - key
+    properties:
+      lable:
+        type: string
+        description: 字段显示名
+      key:
+        $ref: '#/definitions/FieldTypeModel'
+      datatype:
+        type: integer
+        description: 字段类型，对于`date`来说，应该是`3`
+      length:
+        type: integer
+        description: 存储的字节数
+      digit:
+        type: integer
+        description: 小数位数
+      data:
+        type: object
+        description: 枚举类型存储数据用
+      refinfo:
+        type: string
+        description: 参照类型存储参照ID使用
+    example:
+      key: string
+      lable: 字符
+      datatype: 0
+      length: 40
+  RowDetail:
+    type: object
+    required:
+    - id
+    - cols
+    properties:
+      id:
+        type: integer
+      cols:
+        type: array
+        items:
+          $ref: '#/definitions/FieldDetail'
+    example:
+      id: 1
+      cols:
+      - label: 公司
+        type: string
+        value: 用友网络科技股份有限公司
+      - label: 优点
+        type: string
+        value: 5点下班
+      - label: 缺点
+        type: string
+        value: 出差
+  FieldDetail:
+    type: object
+    required:
+    - label
+    - type
+    - value
+    properties:
+      label:
+        type: string
+        description: 字段显示名
+      type:
+        type: string
+        description: 字段类型
+      value:
+        type: string
+        description: 字段值
+    example:
+      label: 公司
+      type: string
+      value: 用友网络科技股份有限公司

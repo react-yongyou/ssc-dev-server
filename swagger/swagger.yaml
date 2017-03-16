@@ -1,0 +1,887 @@
+swagger: '2.0'
+info:
+  title: SSC 3.0 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /plat/basedoc
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /qrybd:
+    x-swagger-router-controller: qrybd
+    post:
+      summary: 查询基本档案
+      description: |
+        查询基本档案
+      tags:
+        - 基本档案(BaseDoc)
+      parameters:
+        - $ref: '#/parameters/QueryParamVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addbd:
+    post:
+      summary: 新增基本档案
+      tags:
+        - 基本档案(BaseDoc)
+      parameters:
+        - $ref: '#/parameters/BaseDefDocVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addbdtype:
+    post:
+      summary: 新增基本档案类型
+      tags:
+        - 基本档案类型(BaseDocType)
+      parameters:
+        - $ref: '#/parameters/DocTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addbilltype:
+    post:
+      summary: 新增单据类型
+      tags:
+        - 单据类型(BillType)
+      parameters:
+        - $ref: '#/parameters/BillTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addtradetype:
+    post:
+      summary: 新增交易类型
+      tags:
+        - 交易类型(TradeType)
+      parameters:
+        - $ref: '#/parameters/TradeTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addmenu:
+    post:
+      summary: 新增菜单
+      tags:
+        - 菜单(Menu)
+      parameters:
+        - $ref: '#/parameters/MenuVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addorg:
+    post:
+      summary: 新增组织
+      tags:
+        - 组织(Org)
+      parameters:
+        - $ref: '#/parameters/BaseOrgVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /addorgtype:
+    post:
+      summary: 新增组织类型
+      tags:
+        - 组织类型(OrgType)
+      parameters:
+        - $ref: '#/parameters/OrgTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delbd:
+    post:
+      summary: 删除基本档案
+      description: |
+        delbd的参数内容里最少要有id和pk_doctype，不需要完整VO。
+      tags:
+        - 基本档案(BaseDoc)
+      parameters:
+        - name: id
+          in: formData
+          description: |
+            主键，实体标识
+          required: true
+          type: string
+        - name: pk_doctype
+          in: formData
+          description: |
+            档案类型
+          required: true
+          type: string
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delbdtype:
+    post:
+      summary: 删除基本档案类型
+      tags:
+        - 基本档案类型(BaseDocType)
+      parameters:
+        - $ref: '#/parameters/DocTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delbilltype:
+    post:
+      summary: 删除单据类型
+      tags:
+        - 单据类型(BillType)
+      parameters:
+        - $ref: '#/parameters/BillTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /deltradetype:
+    post:
+      summary: 删除交易类型
+      tags:
+        - 交易类型(TradeType)
+      parameters:
+        - $ref: '#/parameters/TradeTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delmenu:
+    post:
+      summary: 删除菜单
+      tags:
+        - 菜单(Menu)
+      parameters:
+        - $ref: '#/parameters/MenuVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delorg:
+    post:
+      summary: 删除组织
+      tags:
+        - 组织(Org)
+      parameters:
+        - $ref: '#/parameters/BaseOrgVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /delorgtype:
+    post:
+      summary: 删除组织类型
+      tags:
+        - 组织类型(OrgType)
+      parameters:
+        - $ref: '#/parameters/OrgTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /savebd:
+    post:
+      summary: 保存基本档案
+      tags:
+        - 基本档案(BaseDoc)
+      parameters:
+        - $ref: '#/parameters/BaseDefDocVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /savebdtype:
+    post:
+      summary: 保存基本档案类型
+      tags:
+        - 基本档案类型(BaseDocType)
+      parameters:
+        - $ref: '#/parameters/DocTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /savebilltype:
+    post:
+      summary: 保存单据类型
+      tags:
+        - 单据类型(BillType)
+      parameters:
+        - $ref: '#/parameters/BillTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /savetradetype:
+    post:
+      summary: 保存交易类型
+      tags:
+        - 交易类型(TradeType)
+      parameters:
+        - $ref: '#/parameters/TradeTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /savemenu:
+    post:
+      summary: 保存菜单
+      tags:
+        - 菜单(Menu)
+      parameters:
+        - $ref: '#/parameters/MenuVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /saveorg:
+    post:
+      summary: 保存组织
+      tags:
+        - 组织(Org)
+      parameters:
+        - $ref: '#/parameters/BaseOrgVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /saveorgtype:
+    post:
+      summary: 保存组织类型
+      tags:
+        - 组织类型(OrgType)
+      parameters:
+        - $ref: '#/parameters/OrgTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updatebd:
+    post:
+      summary: 修改基本档案
+      tags:
+        - 基本档案(BaseDoc)
+      parameters:
+        - $ref: '#/parameters/BaseDefDocVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updatebdtype:
+    post:
+      summary: 修改基本档案类型
+      tags:
+        - 基本档案类型(BaseDocType)
+      parameters:
+        - $ref: '#/parameters/DocTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updatebilltype:
+    post:
+      summary: 修改单据类型
+      tags:
+        - 单据类型(BillType)
+      parameters:
+        - $ref: '#/parameters/BillTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updatetradetype:
+    post:
+      summary: 修改交易类型
+      tags:
+        - 交易类型(TradeType)
+      parameters:
+        - $ref: '#/parameters/TradeTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updatemenu:
+    post:
+      summary: 修改菜单
+      tags:
+        - 菜单(Menu)
+      parameters:
+        - $ref: '#/parameters/MenuVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updateorg:
+    post:
+      summary: 修改组织
+      tags:
+        - 组织(Org)
+      parameters:
+        - $ref: '#/parameters/BaseOrgVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+  /updateorgtype:
+    post:
+      summary: 修改组织类型
+      tags:
+        - 组织类型(OrgType)
+      parameters:
+        - $ref: '#/parameters/OrgTypeVO'
+      responses:
+        200:
+          $ref: '#/responses/BaseControllerRS'
+parameters:
+  QueryParamVO:
+    name: QueryParamVO
+    in: body
+    description: |
+      查询基本档案参数
+      查询服务传入参数
+      ```java
+      String pk_doctype; 档案类型
+      String condition; 查询条件
+      Object[] paras; 参数
+      String[] fields; 要查的字段
+      int begin; 结果集开始返回位置
+      int max; 结果集最大返回位置
+      ```
+      翻译成JSON
+      ```json
+      {
+        "pk_doctype": "string",
+        "condition": "string",
+        "paras": {},
+        "fields": "",
+        "begin": 0,
+        "max": 10
+      }
+      ```
+    required: true
+    schema:
+      $ref: '#/definitions/QueryParamVO'
+  BaseDefDocVO:
+    name: BaseDefDocVO
+    in: body
+    description: |
+      查询服务传入参数
+      ```java
+      String pk_doctype; 档案类型
+      String condition; 查询条件
+      Object[] paras; 参数
+      String[] fields; 要查的字段
+      int begin; 结果集开始返回位置
+      int max; 结果集最大返回位置
+      ```
+      翻译成JSON
+      ```json
+      {
+        "pk_doctype": "string",
+        "condition": "string",
+        "paras": {},
+        "fields": "",
+        "begin": 0,
+        "max": 10
+      }
+      ```
+    required: true
+    schema:
+      $ref: '#/definitions/BaseDefDocVO'
+  DocTypeVO:
+    name: DocTypeVO
+    in: body
+    description: |
+      所有操作bdtype的功能，比如add，del，save，update，传进去的参数都是DocTypeVO
+    required: true
+    schema:
+      $ref: '#/definitions/DocTypeVO'
+  BillTypeVO:
+    name: BillTypeVO
+    in: body
+    description: |
+      所有操作billtype的功能，比如add，del，save，update，传进去的参数都是BillTypeVO
+    required: true
+    schema:
+      $ref: '#/definitions/BillTypeVO'
+  TradeTypeVO:
+    name: TradeTypeVO
+    in: body
+    description: |
+      所有操作tradetype的功能，比如add，del，save，update，传进去的参数都是TradeTypeVO
+    required: true
+    schema:
+      $ref: '#/definitions/TradeTypeVO'
+  MenuVO:
+    name: MenuVO
+    in: body
+    description: |
+      所有操作menu的功能，比如add，del，save，update，传进去的参数都是MenuVO
+    required: true
+    schema:
+      $ref: '#/definitions/MenuVO'
+  BaseOrgVO:
+    name: BaseOrgVO
+    in: body
+    description: |
+      所有操作org的功能，比如add，del，save，update，传进去的参数都是BaseOrgVO
+    required: true
+    schema:
+      $ref: '#/definitions/BaseOrgVO'
+  OrgTypeVO:
+    name: OrgTypeVO
+    in: body
+    description: |
+      所有操作addorgtype的功能，比如add，del，save，update，传进去的参数都是OrgTypeVO
+    required: true
+    schema:
+      $ref: '#/definitions/OrgTypeVO'
+responses:
+  BaseControllerRS:
+    description: |
+      返回结果都是实体，实体结构如下：
+      ```java
+      public class BaseControllerRS {
+        String msg; // 消息
+        int code = code_success; // 状态码
+        Object resultValue; // 业务对象
+        public static final int code_success = 1; //成功
+        public static final int code_failure = 0; //失败
+      }
+      ```
+      返回的业务对象是集合类型。
+    schema:
+      $ref: '#/definitions/BaseControllerRS'
+    examples:
+      application/json:
+        msg: 消息
+        code: 1
+        resultValue: {}
+definitions:
+  BaseControllerRS:
+    type: object
+    required:
+    - msg
+    - code
+    - resultValue
+    properties:
+      msg:
+        type: string
+        description: 消息
+      code:
+        type: integer
+        description: 1; //成功 0; //失败
+      resultValue:
+        type: object
+        description: 业务对象，是集合类型
+  QueryParamVO:
+    type: object
+    properties:
+      pk_doctype:
+        type: string
+        description: 档案类型
+      condition:
+        type: string
+        description: 查询条件
+      paras:
+        type: array
+        items:
+          type: object
+        description: 参数
+      fields:
+        type: array
+        items:
+          type: object
+        description: 要查的字段
+      begin:
+        type: integer
+        description: 结果集开始返回位置
+      max:
+        type: integer
+        description: 结果集最大返回位置
+  BaseDefDocVO:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_doctype:
+        type: string
+        description: 档案类型
+      attvaluemap:
+        type: object
+        description: 动态扩展属性，以key-value方式放置:Map<String, Object>
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+  DocTypeVO:
+    type: object
+    properties:
+      hasLevel:
+        type: boolean
+        description: 支持树形结构
+      treeInfoTable:
+        type: string
+        description: 树形信息
+      hasClassify:
+        type: boolean
+        description: 支持分类
+      canVersioned:
+        type: boolean
+        description: 支持版本化
+      entityid:
+        type: string
+        description: 实体ID
+      accessorClass:
+        type: string
+        description: 访问器
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+  BillTypeVO:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+      billClass:
+        type: string
+        description: 单据对应的类
+  TradeTypeVO:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+      billtypeid:
+        type: string
+        description: 所属单据类型
+  MenuVO:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+      url:
+        type: string
+        description: url
+      parentId:
+        type: string
+        description: 上级菜单id
+      tradeType:
+        type: string
+        description: 交易类型
+      level:
+        type: integer
+        description: 级次
+  BaseOrgVO:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_doctype:
+        type: string
+        description: 档案类型
+      attvaluemap:
+        type: object
+        description: Map<String, Object> attvaluemap; 动态扩展属性，以key-value方式放置
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+      url:
+        type: string
+        description: url
+      parentId:
+        type: string
+        description: 上级菜单id
+      tradeType:
+        type: string
+        description: 交易类型
+      level:
+        type: integer
+        description: 级次
+  OrgTypeVO:
+    type: object
+    properties:
+      hasLevel:
+        type: boolean
+        description: 支持树形结构
+      treeInfoTable:
+        type: string
+        description: 树形信息
+      hasClassify:
+        type: boolean
+        description: 支持分类
+      canVersioned:
+        type: boolean
+        description: 支持版本化
+      entityid:
+        type: string
+        description: 实体ID
+      accessorClass:
+        type: string
+        description: 访问器
+      id:
+        type: string
+        description: 主键，实体标识
+      pk_org:
+        type: string
+        description: 组织
+      pk_group:
+        type: string
+        description: 集团
+      description:
+        type: string
+        description: 备注，说明
+      code:
+        type: string
+        description: 编码
+      name:
+        type: string
+        description: 名称多语
+      name_2:
+        type: string
+        description: 名称多语
+      name_3:
+        type: string
+        description: 名称多语
+      name_4:
+        type: string
+        description: 名称多语
+      name_5:
+        type: string
+        description: 名称多语
+      name_6:
+        type: string
+        description: 名称多语
+      def1:
+        type: string
+        description: 自定义项1
+      xxxxxxxxxx:
+        type: string
+        description: TODO def{n}
+      def30:
+        type: string
+        description: 自定义项30
+      indexno:
+        type: integer
+        description: 排序编号

@@ -1,0 +1,139 @@
+{
+  "head": [
+    {
+      "id": "id",
+      "lable": "主键",
+      "datatype": 0,
+      "length": 40
+    },
+    {
+      "id": "code",
+      "lable": "编码",
+      "datatype": 0,
+      "length": 40
+    },
+    {
+      "id": "name",
+      "lable": "名称",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "name2",
+      "lable": "名称2",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "name3",
+      "lable": "名称3",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "name4",
+      "lable": "名称4",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "name5",
+      "lable": "名称5",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "name6",
+      "lable": "名称6",
+      "datatype": 0,
+      "length": 200
+    },
+    {
+      "id": "enable",
+      "lable": "启用",
+      "datatype": 4
+    },
+    {
+      "id": "description",
+      "lable": "备注",
+      "datatype": 0,
+      "length": 500
+    }
+  ],
+  "body": [
+    {
+      "id": "0DFF5E92-4174-4DB2-9744-CBE14A588D29",
+      "creator": "#000#",
+      "creationtime": "2017-02-16 11:11:40",
+      "modifier": null,
+      "modifiedtime": "2017-02-16 11:11:40",
+      "pk_org": "",
+      "pk_group": null,
+      "description": null,
+      "ts": "2017-02-16 11:11:40",
+      "dr": 0,
+      "state": 0,
+      "code": "1234",
+      "name": "测试账簿",
+      "name_2": null,
+      "name_3": null,
+      "name_4": null,
+      "name_5": null,
+      "name_6": null,
+      "parentid": null,
+      "classifyid": null,
+      "enable": false,
+      "def1": null,
+      "def2": null,
+      "def3": null,
+      "def4": null,
+      "def5": null,
+      "def6": null,
+      "def7": null,
+      "def8": null,
+      "def9": null,
+      "def10": null,
+      "def11": null,
+      "def12": null,
+      "def13": null,
+      "def14": null,
+      "def15": null,
+      "def16": null,
+      "def17": null,
+      "def18": null,
+      "def19": null,
+      "def20": null,
+      "def21": null,
+      "def22": null,
+      "def23": null,
+      "def24": null,
+      "def25": null,
+      "def26": null,
+      "def27": null,
+      "def28": null,
+      "def29": null,
+      "def30": null,
+      "shortname": "招商银行",
+      "accstandard": "",
+      "currency": "",
+      "accperiodscheme": "",
+      "subjectchart": "",
+      "multidimension": ""
+    },
+    {
+      "id": "ufNPOpXr1HkzQXyw5fV6mNUHmsf4k5237VhY5xlm",
+      "code": "asdfsdf",
+      "name": "sdfdsf"
+    },
+    {
+      "id": "yuDNiSK43ds1dB2cLFSpyUSyhjmxvEDiF4ZHc1o0",
+      "code": "sdfsd",
+      "name": "fdsfds"
+    },
+    {
+      "id": "9mCZVgPMnGXvXo76McpksjPcdG0mSGxGWsKtSd2C",
+      "code": "sdf",
+      "name": "dsfsfd"
+    }
+  ]
+}
