@@ -113,13 +113,12 @@
   ],
   "body": [
     {
-      "id": "",
-      "code": "1",
-      "name": "1",
+      "id": "wusfuZmqAI7iMV7Xw6xeUrw8uOIdDTs9gRF0v9Mc",
+      "code": "",
+      "name": "",
       "defaultaccount": "",
-      "description": "",
-      "accountproperty": "NORMAL",
-      "accounttype": "1"
+      "accountproperty": "",
+      "accounttype": ""
     }
   ]
 }
