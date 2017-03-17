@@ -892,7 +892,7 @@ paths:
         '404':
           description: Not Found
   /dept/save:
-    x-swagger-router-controller: dept_save
+    x-swagger-router-controller: common_save
     post:
       description: 部门修改接口
       tags:
