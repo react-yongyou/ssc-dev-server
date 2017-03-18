@@ -23,6 +23,8 @@ function post(req, res) {
     success: true
   };
 
+  // TODO 如果字段类型为ref那么保存方式是不同的，需要单独处理
+
   if (data.id) {
     db.get('body')
       .find({id: data.id})
