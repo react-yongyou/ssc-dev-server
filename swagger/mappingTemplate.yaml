@@ -1,0 +1,261 @@
+swagger: '2.0'
+info:
+  title: 财务云 友报账 模板映射 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+
+paths:
+
+  /template/listnodemeta:
+    x-swagger-router-controller: template_listnodemeta
+    post:
+      description: 数据映射获取元数据接口
+      tags:
+      - 数据映射
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/RequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+          
+  /template_erp/loadbilltype:
+    x-swagger-router-controller: template_erp_loadbilltype
+    post:
+      description: 获取NC单据类型接口
+      tags:
+      - NC单据
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+          
+  /template_erp/loadtemplate:
+    x-swagger-router-controller: template_erp_loadtemplate
+    post:
+      description: 获取NC单据模板接口
+      tags:
+      - NC单据
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/LoadTemplateRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+          
+  /template/savemapping:
+    x-swagger-router-controller: template_savemapping
+    post:
+      description: 保存数据映射接口
+      tags:
+      - 数据映射
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/SaveMappingRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+
+definitions:
+
+  FakeResponseModel:
+    type: object
+    required:
+    - code
+    - information
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      information:
+        type: string
+        description: 失败描述信息
+
+  RequestModel:
+    type: object
+    required:
+    - itemTypes
+    - billTypePk
+    properties:
+      itemTypes:
+        type: array
+        description: |
+          表体记事类型
+          来源接口3中bodys的type，没有传[]。
+          接口3参照http://git.yonyou.com/sscplatform/fc_doc/blob/master/expense-template.md
+        items:
+          type: string
+          description: |
+            比如`communicate`或者`other`
+      billTypePk:
+        type: string
+        description: |
+          单据类型pk，比如`ujSCJeF8wVRKf0M5fCHjc`
+          接口2返回数据中的pk。
+          接口2参照http://git.yonyou.com/sscplatform/fc_doc/blob/master/expense-template.md
+
+  LoadTemplateRequestModel:
+    type: object
+    required:
+    - billtypecode
+    properties:
+      billtypecode:
+        type: string
+        description: |
+          接口6中的单据类型，比如`2641`
+
+  SuccessResponseModel:
+    type: object
+    required:
+    - code
+    - information
+    - heads
+    - bodys
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      information:
+        type: string
+        description: 失败描述信息
+      heads:
+        type: array
+        items:
+          $ref: '#/definitions/HeadModel'
+      bodys:
+        type: array
+        items:
+          $ref: '#/definitions/BodyModel'
+
+  HeadModel:
+    type: object
+    required:
+    - id
+    - pk
+    - relationshipPk
+    properties:
+      id:
+        type: string
+      pk:
+        type: string
+      relationshipPk:
+        type: string
+    example:
+      id: 168
+      pk: "7vSCjFGuydAKkZPEIc111"
+      relationshipPk: "HvSCmixm6cuNgxIS6MJ56"
+      sourceCode: "money"
+      sourceType: 1200
+      sourceName: "金额"
+      destProperty: "amount"
+      destPropertyType: 2
+      destPropertyName: "金额"
+      sourceInput: true
+      sourceEdit: true
+
+  BodyModel:
+    type: object
+    required:
+    - type_count
+    properties:
+      type_count:
+        type: string
+    example:
+      type_count: 6
+      type_name: "通讯"
+      properties:
+      - properties1: "money"
+        properties1_type: 2
+        properties1_name: "金额"
+      type: "communicate"
+      pk: "communicate"
+      
+  SaveMappingRequestModel:
+    type: object
+    required:
+    - billTypePk
+    - others
+    - heads
+    - bodys
+    properties:
+      billTypePk:
+        type: string
+      others:
+        type: object
+        properties:
+          destBillTypeCode:
+            type: string
+          destType:
+            type: string
+      heads:
+        type: array
+        items:
+          type: object
+          properties:
+            properityName:
+              type: string
+      bodys:
+        type: array
+        items:
+          type: object
+          properties:
+            properties:
+              type: array
+              items:
+                type: object
+                properties:
+                  properityName:
+                    type: string

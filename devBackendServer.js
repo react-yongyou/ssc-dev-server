@@ -47,6 +47,14 @@ const referSwaggerConfig = {
   mockControllersDirs: 'api/mocks'
 };
 
+// 模板映射
+const mappingTemplateSwaggerConfig = {
+  swagger: 'swagger/mappingTemplate.yaml',
+  appRoot: __dirname,
+  configDir: 'swagger',
+  mockControllersDirs: 'api/mocks'
+};
+
 SwaggerExpress.create(swaggerConfig, (err, swaggerExpress) => {
   if (err) { throw err; }
 
@@ -55,6 +63,13 @@ SwaggerExpress.create(swaggerConfig, (err, swaggerExpress) => {
 });
 
 SwaggerExpress.create(referSwaggerConfig, (err, swaggerExpress) => {
+  if (err) { throw err; }
+
+  // install middleware
+  swaggerExpress.register(app);
+});
+
+SwaggerExpress.create(mappingTemplateSwaggerConfig, (err, swaggerExpress) => {
   if (err) { throw err; }
 
   // install middleware

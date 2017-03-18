@@ -1,0 +1,365 @@
+{
+  "others": {
+    "destBillTypeCode": "2641",
+    "destType": "bx"
+  },
+  "heads": [
+    {
+      "properityName": "金额",
+      "properityType": "money",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1200",
+      "dataTypeName": "浮点",
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "amount",
+      "showProperityName": "金额",
+      "showTypeCode": "2"
+    },
+    {
+      "properityName": "描述",
+      "properityType": "descript",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1000",
+      "dataTypeName": "字符型",
+      "charLength": "255",
+      "defitemFlag": false,
+      "showProperityType": "zy",
+      "showProperityName": "事由",
+      "showTypeCode": "0"
+    },
+    {
+      "properityName": "银行账户",
+      "properityType": "bankAccountKey",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1530",
+      "dataTypeName": null,
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "skyhzh",
+      "showProperityName": "个人银行账户",
+      "showTypeCode": "5"
+    },
+    {
+      "properityName": "户名",
+      "properityType": "bankAccount",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1520",
+      "dataTypeName": null,
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "defitem48",
+      "showProperityName": "人员",
+      "showTypeCode": "5"
+    },
+    {
+      "properityName": "项目",
+      "properityType": "zdyhead",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1500",
+      "dataTypeName": "参照",
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "jobid",
+      "showProperityName": "项目",
+      "showTypeCode": "5"
+    },
+    {
+      "properityName": "收支项目",
+      "properityType": "szitemKey",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1500",
+      "dataTypeName": "参照",
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "szxmid",
+      "showProperityName": "收支项目",
+      "showTypeCode": "5"
+    },
+    {
+      "properityName": "单据日期",
+      "properityType": "dealdate",
+      "editStatus": true,
+      "useStatus": true,
+      "inputStatus": true,
+      "dataTypeCode": "1300",
+      "dataTypeName": "日期",
+      "charLength": null,
+      "defitemFlag": false,
+      "showProperityType": "djrq",
+      "showProperityName": "单据日期",
+      "showTypeCode": "3"
+    }
+  ],
+  "bodys": [
+    {
+      "type_count": 6,
+      "type_name": "出行",
+      "properties": [
+        {
+          "properityName": "金额",
+          "properityType": "money",
+          "typeCode": "2",
+          "destProperityType": "defitem7",
+          "destProperityName": "交通费金额",
+          "destTypeCode": "2",
+          "tableName": "arap_bxbusitem"
+        },
+        {
+          "properityName": "出发地",
+          "properityType": "fromCity",
+          "typeCode": "0",
+          "destProperityType": "defitem3",
+          "destProperityName": "出发地点",
+          "destTypeCode": "0",
+          "tableName": "arap_bxbusitem"
+        },
+        {
+          "properityName": "目的地",
+          "properityType": "toCity",
+          "typeCode": "0",
+          "destProperityType": "defitem4",
+          "destProperityName": "到达地点",
+          "destTypeCode": "0",
+          "tableName": "arap_bxbusitem"
+        },
+        {
+          "properityName": "出发日期",
+          "properityType": "travelDate",
+          "typeCode": "3",
+          "destProperityType": "defitem1",
+          "destProperityName": "出发日期",
+          "destTypeCode": "3",
+          "tableName": "arap_bxbusitem"
+        },
+        {
+          "properityName": "交通工具",
+          "properityType": "travelWay",
+          "typeCode": "0",
+          "destProperityType": "defitem5",
+          "destProperityName": "交通工具",
+          "destTypeCode": "6",
+          "tableName": "arap_bxbusitem"
+        },
+        {
+          "properityName": "费用类型",
+          "properityType": "expensetype",
+          "typeCode": "5",
+          "destProperityType": "defitem36",
+          "destProperityName": "费用类型(自定义档案)",
+          "destTypeCode": "5",
+          "tableName": "arap_bxbusitem"
+        }
+      ],
+      "type": "travel",
+      "pk": "travel"
+    },
+    {
+      "type_count": 9,
+      "type_name": "住宿",
+      "properties": [
+        {
+          "properityName": "金额",
+          "properityType": "money",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "城市",
+          "properityType": "city",
+          "typeCode": "0",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "入住时间",
+          "properityType": "startDate",
+          "typeCode": "3",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "离店日期",
+          "properityType": "endDate",
+          "typeCode": "3",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "入住酒店",
+          "properityType": "hotel",
+          "typeCode": "0",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "税率",
+          "properityType": "taxrate",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "税额",
+          "properityType": "includtax",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "无税金额",
+          "properityType": "nottax",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "发票号",
+          "properityType": "invoicenum",
+          "typeCode": "0",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        }
+      ],
+      "type": "hotel",
+      "pk": "hotel"
+    },
+    {
+      "type_count": 4,
+      "type_name": "餐饮",
+      "properties": [
+        {
+          "properityName": "金额",
+          "properityType": "money",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "餐饮公司",
+          "properityType": "company",
+          "typeCode": "0",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "用餐人数",
+          "properityType": "personNum",
+          "typeCode": "1",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "用餐日期",
+          "properityType": "eatingDate",
+          "typeCode": "3",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        }
+      ],
+      "type": "eating",
+      "pk": "eating"
+    },
+    {
+      "type_count": 6,
+      "type_name": "其它",
+      "properties": [
+        {
+          "properityName": "金额",
+          "properityType": "money",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "日期",
+          "properityType": "otherDate",
+          "typeCode": "3",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "税率",
+          "properityType": "taxrate",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "税额",
+          "properityType": "includtax",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "无税金额",
+          "properityType": "nottax",
+          "typeCode": "2",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        },
+        {
+          "properityName": "发票号",
+          "properityType": "invoicenum",
+          "typeCode": "0",
+          "destProperityType": null,
+          "destProperityName": null,
+          "destTypeCode": null,
+          "tableName": null
+        }
+      ],
+      "type": "other",
+      "pk": "other"
+    }
+  ]
+}
