@@ -7,6 +7,9 @@ module.exports = {
 };
 
 function post(req, res) {
+  // var sleep = require('sleep');
+  // sleep.sleep(1);
+
   // 这里使用通用处理的controller，需要从swaggerObj中获取到path
   // path中含有对应的档案类型
   // 比如`/dept/query`
