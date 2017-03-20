@@ -844,7 +844,7 @@ paths:
 
 
   /dept/query:
-    x-swagger-router-controller: dept_query
+    x-swagger-router-controller: common_query
     post:
       description: 部门查询接口
       tags:
