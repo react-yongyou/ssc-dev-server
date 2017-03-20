@@ -91,6 +91,24 @@ SwaggerExpress.create(outerEntityTreeSwaggerConfig, (err, swaggerExpress) => {
   swaggerExpress.register(app);
 });
 
+var swaggerConfigs = [
+  {
+    swagger: 'swagger/entity.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  }
+];
+
+swaggerConfigs.forEach(config => {
+  SwaggerExpress.create(config, (err, swaggerExpress) => {
+    if (err) { throw err; }
+
+    // install middleware
+    swaggerExpress.register(app);
+  });
+});
+
 const port = process.env.PORT || 3009;
 const ip = process.env.IP || '127.0.0.1';
 

@@ -1,0 +1,111 @@
+swagger: '2.0'
+info:
+  title: 财务云 友账表 实体模型 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+
+paths:
+
+  /ficloud_web/md/qryEntity:
+    x-swagger-router-controller: md_queryentity
+    post:
+      description: 查询接口
+      tags:
+      - 实体模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/QueryRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+definitions:
+
+  QueryRequestModel:
+    type: object
+    required:
+    - begin
+    properties:
+      condition:
+        type: string
+      paras:
+        type: array
+        items:
+          type: string
+      fields:
+        type: array
+        items:
+          type: string
+      begin:
+        type: integer
+      
+
+  SuccessResponseModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: string
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/MainTableModel'
+
+  MainTableModel:
+    type: object
+    required:
+    - id
+    - mainTableName
+    properties:
+      id:
+        type: string
+      mainTableName:
+        type: string
+      bodies:
+        type: array
+        items:
+          $ref: '#/definitions/SubTableModel'
+    example:
+      id: ''
+      mainTableName: 'bd_dept'
+      
+  SubTableModel:
+    type: object
+    required:
+    - id
+    - tableName
+    properties:
+      id:
+        type: string
+      tableName:
+        type: string
+    example:
+      id: ''
+      tableName: ''

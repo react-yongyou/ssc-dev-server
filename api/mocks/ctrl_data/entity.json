@@ -1,0 +1,30 @@
+[
+  {
+    "id": "",
+    "mainTableName": "bd_dept",
+    "fullClassName": "yonyou.com.pub.bd.entity.DeptVO",
+    "entityName": "dept",
+    "displayName": "部门",
+    "accessorClass": "",
+    "entityType": "0",
+    "bodies": [
+      {
+        "id": "",
+        "tableName": "",
+        "propertyName": "pk_org",
+        "displayName": "所属组织",
+        "columnName": "",
+        "maxLength": 40,
+        "numberDigit": 0,
+        "isExtend": false,
+        "isSyncDB": true,
+        "assemblyType": 20,
+        "dataType": 10,
+        "dataTypeInfo": "",
+        "refEntity": "F367C4C9-E719-4318-A5A1-AB2C4A1BF913",
+        "refEntityCode": "org",
+        "nullable": true
+      }
+    ]
+  }
+]
