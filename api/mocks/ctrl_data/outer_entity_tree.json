@@ -1,0 +1,92 @@
+[
+  {
+    "parentKey": null,
+    "title": "@root@:交通费报销单",
+    "key": "2643",
+    "children": [
+      {
+        "parentKey": "2643",
+        "title": "head",
+        "key": "1",
+        "children": null,
+        "data": {
+          "id": "1",
+          "propertycode": "head",
+          "propertyname": "表头",
+          "outeridentifier": "head",
+          "datatype": 1,
+          "assemblytype": 20,
+          "refouterentity": "2",
+          "refentity": null
+        }
+      },
+      {
+        "parentKey": "2643",
+        "title": "items",
+        "key": "2",
+        "children": [
+          {
+            "parentKey": "2",
+            "title": "communicate",
+            "key": "3",
+            "children": null,
+            "data": {
+              "id": "3",
+              "propertycode": "communicate",
+              "propertyname": "表体1",
+              "outeridentifier": "communicate",
+              "datatype": 1,
+              "assemblytype": 40,
+              "refouterentity": "4",
+              "refentity": null
+            }
+          },
+          {
+            "parentKey": "2",
+            "title": "test1",
+            "key": "DD93D322-38E7-49AC-8228-78BC0DCD2BCA",
+            "children": [
+              {
+                "parentKey": "DD93D322-38E7-49AC-8228-78BC0DCD2BCA",
+                "title": "test1",
+                "key": "FF5C72B4-937F-4B1E-8534-12D9E2E029E9",
+                "children": null,
+                "data": {
+                  "id": "FF5C72B4-937F-4B1E-8534-12D9E2E029E9",
+                  "propertycode": "test1",
+                  "propertyname": "test1",
+                  "outeridentifier": "test1",
+                  "datatype": 6,
+                  "assemblytype": 10,
+                  "refouterentity": null,
+                  "refentity": null
+                }
+              }
+            ],
+            "data": {
+              "id": "DD93D322-38E7-49AC-8228-78BC0DCD2BCA",
+              "propertycode": "test1",
+              "propertyname": null,
+              "outeridentifier": null,
+              "datatype": 11,
+              "assemblytype": 20,
+              "refouterentity": "3AC185E3-BF9F-4075-9D47-08B8513405A5",
+              "refentity": null
+            }
+          }
+        ],
+        "data": {
+          "id": "2",
+          "propertycode": "items",
+          "propertyname": "表体",
+          "outeridentifier": "items",
+          "datatype": 1,
+          "assemblytype": 20,
+          "refouterentity": "3",
+          "refentity": null
+        }
+      }
+    ],
+    "data": null
+  }
+]

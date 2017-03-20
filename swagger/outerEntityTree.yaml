@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  title: 财务云 友账表 外部数据建模 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+
+paths:
+
+  /ficloud_web/outerentitytree/querytree:
+    x-swagger-router-controller: outerentitytree_querytree
+    post:
+      description: 查询接口
+      tags:
+      - 外部数据建模
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: billtypecode
+          schema:
+            $ref: '#/definitions/RequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+definitions:
+
+  RequestModel:
+    type: object
+    required:
+    - billtypecode
+    properties:
+      billtypecode:
+        type: string
+        description: |
+          单据类型code，比如`2643`
+
+  SuccessResponseModel:
+    type: object
+    required:
+    - code
+    - data
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/TreeNodeModel'
+
+  TreeNodeModel:
+    type: object
+    required:
+    - title
+    - key
+    properties:
+      title:
+        type: string
+      key:
+        type: string
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/TreeNodeModel'
+    example:
+      title: '交通费报销单'
+      key: '2643'

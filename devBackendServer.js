@@ -55,6 +55,14 @@ const mappingTemplateSwaggerConfig = {
   mockControllersDirs: 'api/mocks'
 };
 
+// 外部数据建模
+const outerEntityTreeSwaggerConfig = {
+  swagger: 'swagger/outerEntityTree.yaml',
+  appRoot: __dirname,
+  configDir: 'swagger',
+  mockControllersDirs: 'api/mocks'
+};
+
 SwaggerExpress.create(swaggerConfig, (err, swaggerExpress) => {
   if (err) { throw err; }
 
@@ -70,6 +78,13 @@ SwaggerExpress.create(referSwaggerConfig, (err, swaggerExpress) => {
 });
 
 SwaggerExpress.create(mappingTemplateSwaggerConfig, (err, swaggerExpress) => {
+  if (err) { throw err; }
+
+  // install middleware
+  swaggerExpress.register(app);
+});
+
+SwaggerExpress.create(outerEntityTreeSwaggerConfig, (err, swaggerExpress) => {
   if (err) { throw err; }
 
   // install middleware
