@@ -868,7 +868,7 @@ paths:
         '404':
           description: Not Found
   /dept/delete:
-    x-swagger-router-controller: dept_delete
+    x-swagger-router-controller: common_delete
     post:
       description: 部门删除接口
       tags:
