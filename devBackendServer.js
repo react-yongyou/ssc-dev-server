@@ -93,6 +93,12 @@ SwaggerExpress.create(outerEntityTreeSwaggerConfig, (err, swaggerExpress) => {
 
 var swaggerConfigs = [
   {
+    swagger: 'swagger/echo.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  },
+  {
     swagger: 'swagger/entity.yaml',
     appRoot: __dirname,
     configDir: 'swagger',
