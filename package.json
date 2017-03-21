@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run devBackend",
-    "devBackend": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch api --watch swagger --ignore db_data ./devBackendServer.js",
+    "devBackend": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch ./devBackendServer.js --watch api --watch swagger --ignore db_data ./devBackendServer.js",
     "lint": "eslint docs src test tools webpack *.js",
     "db:reset": "node api/mocks/reset_db.js"
   },

@@ -103,6 +103,12 @@ var swaggerConfigs = [
     appRoot: __dirname,
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
+  },
+  {
+    swagger: 'swagger/template.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
   }
 ];
 
