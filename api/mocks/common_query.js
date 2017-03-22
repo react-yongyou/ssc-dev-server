@@ -1,7 +1,8 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const utils = require('./utils');
-const sleep = require('sleep');
+const sleep = require('sleep'); // 在windows下可能会报错
+// const sleep = require('system-sleep'); // 据说可以支持windows
 
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = true;

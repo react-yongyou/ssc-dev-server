@@ -84,6 +84,7 @@
     "ssc-grid": "^0.42.0",
     "style-loader": "^0.12.3",
     "swagger-express-mw": "^0.7.0",
+    "system-sleep": "^1.3.0",
     "url-loader": "^0.5.6"
   }
 }
