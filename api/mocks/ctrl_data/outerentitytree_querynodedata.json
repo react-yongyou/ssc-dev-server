@@ -1,0 +1,113 @@
+{
+  "__meta__": {
+    "request": [
+      "POST /ficloud_web/outerentitytree/querynodedata",
+      "Host: 10.1.218.36:8080",
+      "Content-Type: application/json",
+      "",
+      "{",
+      "  \"parentKey\": null,",
+      "  \"title\": \"总账凭证:友账簿凭证\",",
+      "  \"key\": \"@E@:G001ZM0000BILLTYPE000000000000000003\",",
+      "  \"isLeaf\": false,",
+      "  \"infoKey\": \"1\"",
+      "}"
+    ]
+  },
+  "data": {
+    "head": [
+      {
+        "id": "id",
+        "lable": "实体标识",
+        "datatype": 0,
+        "length": 40,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "src_entityid",
+        "lable": "源实体",
+        "datatype": 0,
+        "length": 40,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "des_entityid",
+        "lable": "目的实体",
+        "datatype": 0,
+        "length": 40,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "src_path",
+        "lable": "源路径",
+        "datatype": 0,
+        "length": 400,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "des_path",
+        "lable": "目的路径",
+        "datatype": 0,
+        "length": 400,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "effector",
+        "lable": "生效条件",
+        "datatype": 0,
+        "length": 2000,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      },
+      {
+        "id": "copyproperties",
+        "lable": "复制属性",
+        "datatype": 4,
+        "length": 2000,
+        "digit": 0,
+        "refinfo": null,
+        "refinfocode": null,
+        "enumdata": null,
+        "hidden": null
+      }
+    ],
+    "body": [
+      {
+        "id": "1",
+        "src_path": null,
+        "copyproperties": false,
+        "pk_org": "G001ZM0000BASEDOCDEFAULTORG000000000",
+        "description": "descript",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000001",
+        "effector": null,
+        "des_path": null,
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000003",
+        "attachedbill": "1",
+        "vouchertype": "1"
+      }
+    ]
+  }
+}

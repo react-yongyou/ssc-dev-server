@@ -1,0 +1,54 @@
+{
+  "__meta__": {
+    "request": [
+      "POST /ficloud_web/outerentitytree/querymdtree",
+      "Host: 10.1.218.36:8080",
+      "Content-Type: application/json",
+      "",
+      "{",
+      "  \"billtypecode\": \"C0\",",
+      "  \"mappingdefid\": \"1\"",
+      "}"
+    ]
+  },
+  "data": [
+    {
+      "parentKey": null,
+      "title": "总账凭证:友账簿凭证",
+      "key": "@E@:G001ZM0000BILLTYPE000000000000000003",
+      "isLeaf": null,
+      "infoKey": "1",
+      "children": [
+        {
+          "parentKey": "@root@:C0",
+          "title": "bodies:友账簿凭证表体",
+          "key": "@E@:G001ZM0000BILLTYPE000000000000000004",
+          "isLeaf": null,
+          "infoKey": "1",
+          "children": [],
+          "data": {
+            "id": "G001ZM0000BILLTYPE000000000000000003",
+            "tableName": null,
+            "propertyName": "bodies",
+            "displayName": "表体",
+            "columnName": "bodies",
+            "maxLength": 0,
+            "numberDigit": null,
+            "isExtend": false,
+            "isSyncDB": false,
+            "assemblyType": 40,
+            "dataType": 11,
+            "dataTypeInfo": null,
+            "refEntity": "G001ZM0000BILLTYPE000000000000000004",
+            "refEntityCode": null,
+            "nullable": true,
+            "defaultvalue": null
+          },
+          "leaf": null
+        }
+      ],
+      "data": null,
+      "leaf": null
+    }
+  ]
+}

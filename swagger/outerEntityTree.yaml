@@ -41,6 +41,60 @@ paths:
         '404':
           description: Not Found
 
+  /ficloud_web/outerentitytree/querymdtree:
+    x-swagger-router-controller: outerentitytree_querymdtree
+    post:
+      description: 查询接口
+      tags:
+      - 外部数据建模
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: |
+            billtypecode取mapdef.md里的des_billtype
+            mappingdefid取mapdef.md里的id
+          schema:
+            $ref: '#/definitions/QueryMdTreeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+  /ficloud_web/outerentitytree/querynodedata:
+    x-swagger-router-controller: outerentitytree_querynodedata
+    post:
+      description: |
+        目前用在实体映射的右表查询服务
+        暂时没有被外部数据建模用到
+      tags:
+      - 实体映射
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 节点信息
+          schema:
+            $ref: '#/definitions/TreeNodeModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
 definitions:
 
   RequestModel:
@@ -52,6 +106,21 @@ definitions:
         type: string
         description: |
           单据类型code，比如`2643`
+
+  QueryMdTreeRequestModel:
+    type: object
+    required:
+    - billtypecode
+    - mappingdefid
+    properties:
+      billtypecode:
+        type: string
+        description: |
+          billtypecode取mapdef.md里的des_billtype，比如`C0`
+      mappingdefid:
+        type: string
+        description: |
+          mappingdefid取mapdef.md里的id，比如`1`
 
   SuccessResponseModel:
     type: object
