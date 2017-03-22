@@ -1,7 +1,7 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const utils = require('./utils');
-const sleep = require('sleep');
+const sleep = require('system-sleep');
 
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = true;
@@ -49,7 +49,7 @@ function post(req, res) {
 
   // 模仿网络延迟以及IO延迟
   if (ENABLE_FAKE_IO_DELAY) {
-    sleep.sleep(1);
+    sleep(1000);
   }
 
   const resObj = {

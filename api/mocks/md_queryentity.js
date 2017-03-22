@@ -1,14 +1,14 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const utils = require('./utils');
+const sleep = require('system-sleep');
 
 module.exports = {
   post: post
 };
 
 function post(req, res) {
-  // var sleep = require('sleep');
-  // sleep.sleep(1);
+  // sleep(1000);
 
   const condition = req.body.condition || '';
   const begin = req.body.begin;
