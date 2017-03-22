@@ -1,0 +1,86 @@
+{
+  "head": [
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 40,
+      "lable": "主键",
+      "refinfocode": null,
+      "id": "id",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 50,
+      "lable": "编码",
+      "refinfocode": null,
+      "id": "code",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 100,
+      "lable": "名称",
+      "refinfocode": null,
+      "id": "name",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "上级部门",
+      "refinfocode": "dept",
+      "id": "parentid",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCDEPT000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "部门主管",
+      "refinfocode": "user",
+      "id": "person",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCUSER000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 5,
+      "length": 40,
+      "lable": "组织",
+      "refinfocode": "org",
+      "id": "pk_org",
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCORG0000000000000000"
+    },
+    {
+      "enumdata": null,
+      "datatype": 4,
+      "length": 10,
+      "lable": "启用",
+      "refinfocode": null,
+      "id": "enable",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 400,
+      "lable": "备注",
+      "refinfocode": null,
+      "id": "description",
+      "digit": 0,
+      "refinfo": null
+    }
+  ],
+  "body": [
+  ]
+}

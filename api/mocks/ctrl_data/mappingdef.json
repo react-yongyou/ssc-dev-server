@@ -1,0 +1,283 @@
+[
+  {
+    "id": "1",
+    "creator": null,
+    "creationtime": null,
+    "modifier": null,
+    "modifiedtime": null,
+    "pk_org": null,
+    "pk_group": null,
+    "description": null,
+    "ts": null,
+    "dr": null,
+    "state": 0,
+    "code": "1",
+    "name": null,
+    "name2": null,
+    "name3": null,
+    "name4": null,
+    "name5": null,
+    "name6": null,
+    "parentid": null,
+    "classifyid": null,
+    "enable": true,
+    "def1": null,
+    "def2": null,
+    "def3": null,
+    "def4": null,
+    "def5": null,
+    "def6": null,
+    "def7": null,
+    "def8": null,
+    "def9": null,
+    "def10": null,
+    "def11": null,
+    "def12": null,
+    "def13": null,
+    "def14": null,
+    "def15": null,
+    "def16": null,
+    "def17": null,
+    "def18": null,
+    "def19": null,
+    "def20": null,
+    "def21": null,
+    "def22": null,
+    "def23": null,
+    "def24": null,
+    "def25": null,
+    "def26": null,
+    "def27": null,
+    "def28": null,
+    "def29": null,
+    "def30": null,
+    "src_system": "fier",
+    "des_system": "figl",
+    "src_billtype": "2643",
+    "des_billtype": "C0",
+    "src_action": "add",
+    "des_action": "add",
+    "effector": null,
+    "syncrun": true,
+    "parammapdef": [],
+    "entitymapdef": [
+      {
+        "id": "1",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000001",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000003",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "1",
+            "des_property": "attachedbill",
+            "mapformula": "1"
+          },
+          {
+            "id": "2",
+            "des_property": "description",
+            "mapformula": "descript"
+          },
+          {
+            "id": "3",
+            "des_property": "pk_org",
+            "mapformula": "G001ZM0000BASEDOCDEFAULTORG000000000"
+          },
+          {
+            "id": "4",
+            "des_property": "vouchertype",
+            "mapformula": "1"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "101",
+            "des_property": "debit_original",
+            "mapformula": "money"
+          },
+          {
+            "id": "103",
+            "des_property": "description",
+            "mapformula": "外系统生成凭证"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "102",
+            "des_property": "credit_original",
+            "mapformula": "money"
+          },
+          {
+            "id": "104",
+            "des_property": "description",
+            "mapformula": "外系统生成凭证"
+          }
+        ]
+      }
+    ],
+    "entityName": null
+  },
+  {
+    "id": "2",
+    "creator": null,
+    "creationtime": null,
+    "modifier": null,
+    "modifiedtime": null,
+    "pk_org": null,
+    "pk_group": null,
+    "description": null,
+    "ts": null,
+    "dr": null,
+    "state": 0,
+    "code": "2",
+    "name": "2",
+    "name2": null,
+    "name3": null,
+    "name4": null,
+    "name5": null,
+    "name6": null,
+    "parentid": null,
+    "classifyid": null,
+    "enable": true,
+    "def1": null,
+    "def2": null,
+    "def3": null,
+    "def4": null,
+    "def5": null,
+    "def6": null,
+    "def7": null,
+    "def8": null,
+    "def9": null,
+    "def10": null,
+    "def11": null,
+    "def12": null,
+    "def13": null,
+    "def14": null,
+    "def15": null,
+    "def16": null,
+    "def17": null,
+    "def18": null,
+    "def19": null,
+    "def20": null,
+    "def21": null,
+    "def22": null,
+    "def23": null,
+    "def24": null,
+    "def25": null,
+    "def26": null,
+    "def27": null,
+    "def28": null,
+    "def29": null,
+    "def30": null,
+    "src_system": "fier",
+    "des_system": "figl",
+    "src_billtype": "2642",
+    "des_billtype": "C0",
+    "src_action": "add",
+    "des_action": "add",
+    "effector": null,
+    "syncrun": true,
+    "parammapdef": [],
+    "entitymapdef": [
+      {
+        "id": "4",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000005",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000003",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "11",
+            "des_property": "attachedbill",
+            "mapformula": "1"
+          },
+          {
+            "id": "12",
+            "des_property": "description",
+            "mapformula": "descript"
+          },
+          {
+            "id": "13",
+            "des_property": "pk_org",
+            "mapformula": "G001ZM0000BASEDOCDEFAULTORG000000000"
+          },
+          {
+            "id": "14",
+            "des_property": "vouchertype",
+            "mapformula": "1"
+          },
+          {
+            "id": "15",
+            "des_property": "maketime",
+            "mapformula": "dealDate"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000006",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "111",
+            "des_property": "debit_original",
+            "mapformula": "money"
+          },
+          {
+            "id": "113",
+            "des_property": "description",
+            "mapformula": "外系统生成凭证"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "src_entityid": "G001ZM0000BILLTYPE000000000000000006",
+        "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
+        "src_path": null,
+        "des_path": null,
+        "copyproperties": false,
+        "effector": null,
+        "promaps": [
+          {
+            "id": "112",
+            "des_property": "credit_original",
+            "mapformula": "money"
+          },
+          {
+            "id": "114",
+            "des_property": "description",
+            "mapformula": "外系统生成凭证"
+          }
+        ]
+      }
+    ],
+    "entityName": null
+  }
+]
