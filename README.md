@@ -1,7 +1,17 @@
 # ssc-dev-server
 
-nc-dev-server是一个基于Express.js，为Web前端开发提供轻量化开发环境的Web服务器。
+ssc-dev-server是一个基于Express.js，为Web前端开发提供轻量化开发环境的Web服务器。
 让Web前端开发人员不再需要连接后端服务器，或者等待后端服务修复bug。
+
+## 特性
+
+- 基础（基本）档案
+  - 支持查询（query），添加（save），保存（save），以及删除（delete）
+  - 支持一键初始化/重置数据库
+- 参照查询
+- 会计平台
+- 支持通过Swagger spec来定义API，并生成API文档（swagger-ui）
+
 
 ## 如何使用
 
