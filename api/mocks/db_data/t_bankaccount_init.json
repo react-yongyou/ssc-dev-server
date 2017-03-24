@@ -2,6 +2,7 @@
   "head": [
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 0,
       "length": 40,
       "lable": "主键",
@@ -12,6 +13,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 0,
       "length": 50,
       "lable": "编码",
@@ -22,6 +24,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 0,
       "length": 100,
       "lable": "名称",
@@ -32,6 +35,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 5,
       "length": 40,
       "lable": "组织",
@@ -42,6 +46,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 5,
       "length": 40,
       "lable": "开户银行",
@@ -52,16 +57,18 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 5,
       "length": 40,
       "lable": "所属银行",
-      "refinfocode": "bank",
+      "refinfocode": "bankclass",
       "id": "bank",
       "digit": 0,
-      "refinfo": "G001ZM0000BASEDOCBANK000000000000000"
+      "refinfo": "G001ZM0000BASEDOCBANKCLASS0000000000"
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 4,
       "length": 10,
       "lable": "默认账户",
@@ -72,6 +79,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 4,
       "length": 10,
       "lable": "启用",
@@ -82,6 +90,7 @@
     },
     {
       "enumdata": null,
+      "hidden": null,
       "datatype": 0,
       "length": 400,
       "lable": "备注",
@@ -91,8 +100,22 @@
       "refinfo": null
     },
     {
-      "enumdata": null,
-      "datatype": 0,
+      "enumdata": [
+        {
+          "BASE": "基本"
+        },
+        {
+          "NORMAL": "一般"
+        },
+        {
+          "TEMPORARY": "临时"
+        },
+        {
+          "SPECIAL": "专用"
+        }
+      ],
+      "hidden": null,
+      "datatype": 6,
       "length": 10,
       "lable": "账户性质",
       "refinfocode": null,
@@ -101,8 +124,16 @@
       "refinfo": null
     },
     {
-      "enumdata": null,
-      "datatype": 0,
+      "enumdata": [
+        {
+          "Company": "公司"
+        },
+        {
+          "Personal": "个人"
+        }
+      ],
+      "hidden": null,
+      "datatype": 6,
       "length": 10,
       "lable": "账户类型",
       "refinfocode": null,
@@ -122,11 +153,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "C7D92934-D69D-41E8-8770-EC0AD739FBA7",
@@ -193,11 +220,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "7E11CB91-51BF-4408-8C94-A322190058AB",
@@ -258,17 +281,72 @@
       "pk_group": null,
       "modifier": null,
       "dr": 0,
+      "pk_org": null,
+      "def30": null,
+      "bank": null,
+      "enable": true,
+      "entityName": "bankaccount",
+      "id": "CF281A91-D1BA-43B5-815E-0A9E15B8594A",
+      "state": 0,
+      "classifyid": null,
+      "name6": null,
+      "name5": null,
+      "name4": null,
+      "name3": null,
+      "def20": null,
+      "def21": null,
+      "def22": null,
+      "def23": null,
+      "def24": null,
+      "name": "测试银行",
+      "def25": null,
+      "def26": null,
+      "def27": null,
+      "creationtime": "2017-03-23 16:33:49",
+      "def28": null,
+      "name2": null,
+      "def29": null,
+      "code": "111",
+      "defaultaccount": null,
+      "accounttype": null,
+      "description": "",
+      "parentid": null,
+      "modifiedtime": "2017-03-23 16:33:49",
+      "def10": null,
+      "def11": null,
+      "def12": null,
+      "depositbank": null,
+      "def13": null,
+      "def14": null,
+      "def15": null,
+      "def16": null,
+      "def17": null,
+      "def18": null,
+      "def19": null,
+      "def3": null,
+      "def4": null,
+      "creator": null,
+      "def1": null,
+      "def2": null,
+      "def9": null,
+      "def7": null,
+      "accountproperty": null,
+      "def8": null,
+      "def5": null,
+      "ts": "2017-03-23 16:33:49",
+      "def6": null
+    },
+    {
+      "pk_group": null,
+      "modifier": null,
+      "dr": 0,
       "pk_org": {
         "code": "0001",
         "name": "默认组织",
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "B0ECE7F1-FBFD-4FCF-A60C-92ACFC0DF244",
@@ -335,11 +413,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "111",
-        "name": "北京农业银行永丰支行",
-        "id": "E2EE9AAF-5AD0-475C-B7C1-DBC5A2EFD428"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "F7447F19-2356-4582-A8D9-9253F4F10A70",
@@ -406,11 +480,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "111",
-        "name": "北京农业银行永丰支行",
-        "id": "E2EE9AAF-5AD0-475C-B7C1-DBC5A2EFD428"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "34D746D8-37BD-4ED8-978C-B713DB185845",
@@ -477,11 +547,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "E7B09BF3-3C22-4291-B8FB-691B4B13CA04",
@@ -548,11 +614,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "26A72B34-A034-4284-95A7-31238A4B95D2",
@@ -619,11 +681,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "DE29B22B-F4CD-4077-9F56-B72BBE7D15E2",
@@ -690,11 +748,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "0CBA0D61-A12B-43F0-82FD-0C23D430AD73",
@@ -761,11 +815,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "883E74BD-D101-4A80-B459-DD87F6FA1121",
@@ -832,11 +882,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "A5C9CB75-1DD3-4F22-801D-22BC94EC979C",
@@ -903,11 +949,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "6DB72B87-F7B6-4A49-ADBA-9AD1AABE062E",
@@ -974,11 +1016,7 @@
         "id": "G001ZM0000BASEDOCDEFAULTORG000000000"
       },
       "def30": null,
-      "bank": {
-        "code": "q1",
-        "name": "q1",
-        "id": "FD1DD78B-974C-4A75-80A1-A4D8D78A0A31"
-      },
+      "bank": null,
       "enable": true,
       "entityName": "bankaccount",
       "id": "A07A1BA8-14AC-47F4-B1AF-FB2B9482E8AC",

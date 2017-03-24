@@ -2,16 +2,20 @@ const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const utils = require('./utils');
 
+/**
+ * 参照API
+ */
+
 module.exports = {
   post: post
 };
 
 function post(req, res) {
   const refCode = req.body.refCode;
-  const refType = req.body.refType;
-  const rootName = req.body.rootName;
+  const refType = req.body.refType; // 暂时无用
+  const rootName = req.body.rootName; // 暂时无用
 
-  const doctype = refCode;
+  const doctype = refCode; // 外键
 
   const resObj = {
     __fake_server__: true,
@@ -19,45 +23,42 @@ function post(req, res) {
     "message": null,
   };
 
-  switch(refCode) {
-    // dept 部门
-    case 'dept':
-      resObj.data = [
-        {
-          "id": "E6CB6CBE-C701-48EC-A3EB-C823DF8DBEED",
-          "isLeaf": "true",
-          "name": "服务中心",
-          "pid": "FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6",
-          "code": "02"
-        },
-        {
-          "id": "FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6",
-          "isLeaf": "false",
-          "name": "测试部",
-          "pid": "",
-          "code": "03"
-        }
-      ];
-      break;
-    // org 组织
-    case 'org':
-      resObj.data = [
-        {
-          "id": "E6CB6CBE-C701-48EC-A3EB-C823DF8DBEED",
-          "isLeaf": "true",
-          "name": "测试组织1",
-          "pid": "FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6",
-          "code": "02"
-        },
-        {
-          "id": "FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6",
-          "isLeaf": "false",
-          "name": "测试组织2",
-          "pid": "",
-          "code": "03"
-        }
-      ];
-      break;
+  // 根据基础档案类型，获取数据库中对应表的所有数据
+  debug(`Open database file: t_${doctype}.json`);
+  const db = low(`${__dirname}/db_data/t_${doctype}.json`);
+
+  // 为啥isEmpty返回的是Boolean对象?
+  if (!db.isEmpty().valueOf()) {
+    var body = db.get('body').value();
+    debug('body: %s', JSON.stringify(body));
+
+    /**
+     * 只需要从数据中截取如下内容，以bank为例
+     * ```json
+     * {
+     *   "code": "101000",
+     *   "name": "建行北京上地支行00",
+     *   "pid": "DB142E51-2812-4E6E-86F2-C631E8E9FBA6",
+     *   "id": "25B49D8D-F",
+     *   "isLeaf": "false"
+     * }
+     * ```
+     */
+    var data = [];
+    body.forEach(item => {
+      data.push({
+        code: item.code,
+        name: item.name,
+        pid: item.parentid ? item.parentid.id : '',
+        id: item.id,
+        isLeaf: "false" // 为啥后端返回字符串类型
+      });
+    });
+    resObj.data = data;
+
+  } else {
+    resObj.success = false;
+    resObj.message = '对应该类型的数据表JSON文件不存在，请检查api/mocks/db_data/目录';
   }
 
   res.json(resObj);

@@ -86,7 +86,11 @@ paths:
           in: body
           description: 节点信息
           schema:
-            $ref: '#/definitions/TreeNodeModel'
+            # 循环引用在运行时候遇到了这个错误，所以使用fake request来取代
+            # UNRESOLVABLE_REFERENCE
+            # Reference could not be resolved: #/definitions/TreeNodeModel
+            #$ref: '#/definitions/TreeNodeModel'
+            $ref: '#/definitions/FakeRequestModel'
       responses:
         '200':
           description: Success
@@ -106,6 +110,13 @@ definitions:
         type: string
         description: |
           单据类型code，比如`2643`
+
+  # POST body 需要是一个JSON对象
+  FakeRequestModel:
+    type: object
+    properties:
+      fake:
+        type: string
 
   QueryMdTreeRequestModel:
     type: object
@@ -153,3 +164,4 @@ definitions:
     example:
       title: '交通费报销单'
       key: '2643'
+
