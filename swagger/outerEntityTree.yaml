@@ -41,7 +41,7 @@ paths:
         '404':
           description: Not Found
 
-  /ficloud_web/outerentitytree/querymdtree:
+  /ficloud/outerentitytree/querymdtree:
     x-swagger-router-controller: outerentitytree_querymdtree
     post:
       description: 查询接口

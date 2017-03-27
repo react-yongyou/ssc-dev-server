@@ -37,7 +37,8 @@ function post(req, res) {
     debug('data: %s', JSON.stringify(data));
     // 对整个表数据进行分页，获取单页数据
     // TODO 由于数据库结构和后端定义的response结构不同，这里处理transform
-    resObj.data = data.slice(begin, begin + itemsPerPage);
+    resObj.data = {};
+    resObj.data.data = data.slice(begin, begin + itemsPerPage);
     resObj.begin = begin;
     resObj.num = itemsPerPage;
     resObj.totalnum = data.length; // 表的总行数

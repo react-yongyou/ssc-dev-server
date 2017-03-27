@@ -1,0 +1,391 @@
+swagger: '2.0'
+info:
+  title: 友账表 基础档案 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /ficloud
+produces:
+  - application/json
+paths:
+
+  /ficloud_pub/initgrid:
+    x-swagger-router-controller: ficloud_pub_initgrid
+    post:
+      description: 查询基本档案字段定义
+      tags:
+      - 通用接口
+      consumes:
+      - application/x-www-form-urlencoded
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: doctype
+        in: formData
+        type: string
+        description: |
+          基础档案类型，包括：
+          - mappingdef
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessModel'
+        '404':
+          description: Not Found
+
+# 每个基础档案有三个接口
+# - query
+# - save
+# - delete
+
+# 所有基础档案类型 - start
+
+  /mappingdef/query:
+    x-swagger-router-controller: mappingdef_query
+    post:
+      description: 转换规则模型查询接口
+      tags:
+        - 转换规则模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /mappingdef/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 转换规则模型删除接口
+      tags:
+        - 转换规则模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 转换规则模型主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /mappingdef/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 转换规则模型修改接口
+      tags:
+        - 转换规则模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 转换规则模型新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+# 所有基础档案类型 - end
+
+definitions:
+  CommonQueryReqModel:
+    type: object
+    required:
+    - condition
+    - begin
+    - groupnum
+    properties:
+      condition:
+        type: string
+        description: 查询条件
+      paras:
+        type: array
+        description: 查询条件参数，非必须
+        items:
+          type: string
+      fields:
+        type: array
+        items:
+          type: string
+        description: 查询字段，非必须，空则查询全部字段
+      begin:
+        type: integer
+        description: 起始位置，用于分页。从0开始
+      groupnum:
+        type: integer
+        description: 分页数量
+  CommonDeleteReqModel:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        description: 40位主键
+  CommonSaveReqModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 部门主键，当为空的时候，新增，不为空，则修改
+      org:
+        type: string
+        description: 组织
+      code:
+        type: string
+        description: 部门编码
+      name:
+        type: string
+        description: 部门名称
+      parentid:
+        type: string
+        description: 上级部门
+      personal:
+        type: string
+        description: 主管
+      enable:
+        type: boolean
+        description: 启用
+      description:
+        type: string
+        description: 备注
+  CommonDeleteSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+  CommonSaveSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        properties:
+          head:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 主键，当为空的时候，新增，不为空，则修改
+              code:
+                type: string
+                description: 编码
+              name:
+                type: string
+                description: 名称
+              enable:
+                type: string
+                description: 启用
+              description:
+                type: string
+                description: 备注
+  CommonSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        - body
+        properties:
+          head:
+            type: array
+            description: 表格字段模型
+            items:
+              $ref: '#/definitions/FieldModel'
+          body:
+            type: array
+            description: 表格行模型
+            items:
+              $ref: '#/definitions/RowDetail'
+  SuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        - body
+        properties:
+          head:
+            type: array
+            description: 表格字段模型
+            items:
+              $ref: '#/definitions/FieldModel'
+          body:
+            type: array
+            description: 表格行模型
+            items:
+              $ref: '#/definitions/RowDetail'
+  FieldTypeModel:
+    type: string
+    description: |
+      字段类型，复用iWeb原有类型，出现问题再进行改进。
+      - `string 0`, 文本类型
+      - `integer 1`, 整数类型
+      - `double 2`, 数量(double)类型
+      - `date 3`, 日期类型，不带带具体时分秒
+      - `datetime 8`, 日期类型
+      - `boolean 4`, 逻辑类型，
+      - `enum 6`, 枚举类型，
+      - `ref 5`, 参照类型
+      - `text 9`, 文本区域类型
+    enum:
+    - string
+    - integer
+    - double
+    - date
+    - datetime
+    - boolean
+    - enum
+    - ref
+    - text
+  FieldModel:
+    type: object
+    required:
+    - lable
+    - key
+    properties:
+      lable:
+        type: string
+        description: 字段显示名
+      key:
+        $ref: '#/definitions/FieldTypeModel'
+      datatype:
+        type: integer
+        description: 字段类型，对于`date`来说，应该是`3`
+      length:
+        type: integer
+        description: 存储的字节数
+      digit:
+        type: integer
+        description: 小数位数
+      data:
+        type: object
+        description: 枚举类型存储数据用
+      refinfo:
+        type: string
+        description: 参照类型存储参照ID使用
+    example:
+      key: string
+      lable: 字符
+      datatype: 0
+      length: 40
+  RowDetail:
+    type: object
+    required:
+    - id
+    - cols
+    properties:
+      id:
+        type: integer
+      cols:
+        type: array
+        items:
+          $ref: '#/definitions/FieldDetail'
+    example:
+      id: 1
+      cols:
+      - label: 公司
+        type: string
+        value: 用友网络科技股份有限公司
+      - label: 优点
+        type: string
+        value: 5点下班
+      - label: 缺点
+        type: string
+        value: 出差
+  FieldDetail:
+    type: object
+    required:
+    - label
+    - type
+    - value
+    properties:
+      label:
+        type: string
+        description: 字段显示名
+      type:
+        type: string
+        description: 字段类型
+      value:
+        type: string
+        description: 字段值
+    example:
+      label: 公司
+      type: string
+      value: 用友网络科技股份有限公司

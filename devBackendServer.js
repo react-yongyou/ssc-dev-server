@@ -111,7 +111,7 @@ var swaggerConfigs = [
     mockControllersDirs: 'api/mocks'
   },
   {
-    swagger: 'swagger/mapdef.yaml',
+    swagger: 'swagger/yzb_basedoc.yaml',
     appRoot: __dirname,
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
