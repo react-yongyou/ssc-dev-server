@@ -132,8 +132,10 @@ definitions:
     - groupnum
     properties:
       condition:
-        type: string
+        type: array
         description: 查询条件
+        items:
+          type: string
       paras:
         type: array
         description: 查询条件参数，非必须
