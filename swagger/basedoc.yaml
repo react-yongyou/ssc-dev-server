@@ -71,7 +71,7 @@ paths:
         type: string
         description: |
           查询条件SQL部分语句
-          比如： 
+          比如：
           ```
           entityid IN ('G001ZM0000BASEDOCDEPT000000000000000', 'G001ZM0000BASEDOCPERSON0000000000000', 'G001ZM0000BASEDOCORG0000000000000000')
           ```
@@ -1661,22 +1661,6 @@ paths:
 
 # 所有基础档案类型 - end
 
-
-
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
   /plat/basedoc/qrybd:
     x-swagger-router-controller: qrybd
     get:
@@ -1699,16 +1683,35 @@ paths:
       produces:
         - application/json
 definitions:
+  QueryConditionModel:
+    type: object
+    description: |
+      比如查询所有`enable`字段值为`true`的数据：
+      ```json
+      {"field":"enable","datatype":"boolean","value":"true"}
+      ```
+    properties:
+      field:
+        type: string
+      datatype:
+        type: string
+      value:
+        type: string
+  QueryConditionsModel:
+    type: array
+    description: |
+      查询条件字段，如何没有任何条件，请给空数组`conditions: []`
+    items:
+      $ref: '#/definitions/QueryConditionModel'
   CommonQueryReqModel:
     type: object
     required:
-    - condition
+    - conditions
     - begin
     - groupnum
     properties:
-      condition:
-        type: string
-        description: 查询条件
+      conditions:
+        $ref: '#/definitions/QueryConditionsModel'
       paras:
         type: string
         description: 查询条件参数，非必须
@@ -1724,13 +1727,12 @@ definitions:
   DeptQueryReqModel:
     type: object
     required:
-    - condition
+    - conditions
     - begin
     - groupnum
     properties:
-      condition:
-        type: string
-        description: 查询条件
+      conditions:
+        $ref: '#/definitions/QueryConditionsModel'
       paras:
         type: string
         description: 查询条件参数，非必须
