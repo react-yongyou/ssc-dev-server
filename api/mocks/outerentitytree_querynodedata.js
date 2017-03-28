@@ -17,13 +17,13 @@ function post(req, res) {
     "message": null
   };
 
-  debug(`Open controller data file: outerentitytree_querynodedata.json`);
-  const db = low(`${__dirname}/ctrl_data/outerentitytree_querynodedata.json`);
+  debug(`Open controller data file: t_outerentitytree.json`);
+  const db = low(`${__dirname}/db_data/t_outerentitytree.json`);
 
   // 为啥isEmpty返回的是Boolean对象?
   if (!db.isEmpty().valueOf()) {
     // const meta = db.get('__meta__').value(); // 获取meta信息
-    var data = db.get('data').value();
+    var data = db.value();
     debug('data: %s', JSON.stringify(data));
     resObj.data = data;
   } else {

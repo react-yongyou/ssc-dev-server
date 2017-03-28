@@ -44,7 +44,7 @@ paths:
   /ficloud/outerentitytree/querymdtree:
     x-swagger-router-controller: outerentitytree_querymdtree
     post:
-      description: 查询接口
+      description: 左树查询服务
       tags:
       - 外部数据建模
       consumes:
@@ -68,7 +68,7 @@ paths:
         '404':
           description: Not Found
 
-  /ficloud_web/outerentitytree/querynodedata:
+  /ficloud/outerentitytree/querynodedata:
     x-swagger-router-controller: outerentitytree_querynodedata
     post:
       description: |
@@ -90,6 +90,32 @@ paths:
             # UNRESOLVABLE_REFERENCE
             # Reference could not be resolved: #/definitions/TreeNodeModel
             #$ref: '#/definitions/TreeNodeModel'
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+  /ficloud/outerentitytree/addnodedata:
+    x-swagger-router-controller: outerentitytree_addnodedata
+    post:
+      description: |
+        新增接口
+      tags:
+      - 实体映射
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 节点信息
+          schema:
             $ref: '#/definitions/FakeRequestModel'
       responses:
         '200':
