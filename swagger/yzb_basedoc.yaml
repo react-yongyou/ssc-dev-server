@@ -127,11 +127,11 @@ definitions:
   CommonQueryReqModel:
     type: object
     required:
-    - condition
+    - conditions
     - begin
     - groupnum
     properties:
-      condition:
+      conditions:
         type: array
         description: 查询条件
         items:
