@@ -65,3 +65,7 @@ curl -X GET "http://localhost:3008/plat/basedoc/qrybd?id=1"
 ```
 
 View generated API docs with Swagger UI: https://xxd3vin.github.io/swagger-ui/?url=https://raw.githubusercontent.com/yyssc/ssc30-admin/master/src/swagger/swagger.yaml
+
+## 友账表
+
+- 转换规则定义 `yzb_basedoc.yaml`
