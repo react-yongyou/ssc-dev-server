@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: 财务云 友账表 外部数据建模 API
+  title: 财务云 友账表 实体映射 API
   description: Move your app forward with the SSC API
   version: "1.0.0"
 # the domain of the service
@@ -190,4 +190,3 @@ definitions:
     example:
       title: '交通费报销单'
       key: '2643'
-
