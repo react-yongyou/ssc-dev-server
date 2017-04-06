@@ -10,11 +10,27 @@ const sleep = require('system-sleep');
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = 0;
 
-module.exports = {
-  post: post
-};
+/**
+ * 后端返回的类型不正确，比如应该把`"true"`改成`true`
+ * @param {Object} condition
+ * ```json
+ * [
+ *   {
+ *     "field": "enable",
+ *     "datatype": "boolean",
+ *     "value": "true"
+ *   }
+ * ]
+ * ```
+ */
+function fixConditions(condition) {
+  if (condition.datatype === 'boolean') {
+    condition.value = condition.value === 'true';
+  }
+  return condition;
+}
 
-function post(req, res) {
+exports.post = function(req, res) {
 
   // 模仿网络延迟以及IO延迟
   if (ENABLE_FAKE_IO_DELAY) {
@@ -27,7 +43,7 @@ function post(req, res) {
   const doctype = utils.getDocTypeFromQueryPath(
     req.swagger.operation.pathObject.path);
 
-  // const conditions = req.body.conditions;
+  const conditions = req.body.conditions.map(fixConditions);
   const begin = req.body.begin;
   const itemsPerPage = req.body.groupnum; // 每页显示数量
 
@@ -43,8 +59,15 @@ function post(req, res) {
 
   // 为啥isEmpty返回的是Boolean对象?
   if (!db.isEmpty().valueOf()) {
-    let body = db.get('body').value();
+    let matches = {};
+    conditions.forEach(condition => {
+      matches[condition.field] = condition.value;
+    });
+    let body = db.get('body')
+      .filter(matches)
+      .value();
     // debug('body: %s', JSON.stringify(body));
+    
     // 对整个表数据进行分页，获取单页数据
     // TODO 由于数据库结构和后端定义的response结构不同，这里处理transform
     resObj.data = body.slice(begin, begin + itemsPerPage);
