@@ -1,17 +1,6 @@
-"use strict";
+/*eslint strict: ["error", "global"]*/
 
-module.exports = {
-  getDocTypeFromQueryPath: getDocTypeFromQueryPath,
-  getDocTypeFromSavePath: getDocTypeFromSavePath,
-  getDocTypeFromDeletePath: getDocTypeFromDeletePath,
-  row: row,
-  pagination: pagination,
-  makeid: makeid,
-  string: $string,
-  boolean: $boolean,
-  ref: $ref,
-  enum: $enum
-};
+"use strict";
 
 function runRegex(path, regex) {
   var m;
@@ -25,19 +14,23 @@ function runRegex(path, regex) {
 }
 
 // input `/dept/query` output `dept`
-function getDocTypeFromQueryPath(path) {
+exports.getDocTypeFromQueryPath = function (path) {
   return runRegex(path, /\/(.*)\/query/);
 }
 
-function getDocTypeFromSavePath(path) {
+exports.getDocTypeFromSavePath = function (path) {
   return runRegex(path, /\/(.*)\/save/);
 }
 
-function getDocTypeFromDeletePath(path) {
+exports.getDocTypeFromDeletePath = function (path) {
   return runRegex(path, /\/(.*)\/delete/);
 }
 
-function row(id, cols) {
+exports.getDocTypeFromTurnEnablePath = function (path) {
+  return runRegex(path, /\/(.*)\/turnenable/);
+}
+
+exports.row = function (id, cols) {
   return {
     id: id,
     cols: cols.map(col => ({value: col}))
@@ -61,11 +54,11 @@ function row(id, cols) {
  *
  *
  */
-function pagination(fullArr, begin, itemPerPage) {
+exports.paginatioin = function (fullArr, begin, itemPerPage) {
   return fullArr.slice(begin, begin + itemPerPage);
 }
 
-function makeid(length) {
+exports.makeid = function (length) {
   length = length || 5;
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -76,7 +69,7 @@ function makeid(length) {
 }
 
 // 字符
-function $string(id, name, size) {
+exports.$string = function (id, name, size) {
   size = size || 40;
   return {
     "id": id,
@@ -87,7 +80,7 @@ function $string(id, name, size) {
 }
 
 // 布尔
-function $boolean(id, name) {
+exports.$boolean = function (id, name) {
   return {
     "id": id,
     "lable": name,
@@ -96,7 +89,7 @@ function $boolean(id, name) {
 }
 
 // 参照
-function $ref(id, name) {
+exports.$ref = function (id, name) {
   return {
     "id": id,
     "lable": name,
@@ -106,7 +99,7 @@ function $ref(id, name) {
 }
 
 // 枚举
-function $enum(id, name) {
+exports.$enum = function (id, name) {
   return {
     "id": id,
     "lable": name,

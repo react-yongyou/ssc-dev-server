@@ -992,6 +992,30 @@ paths:
             $ref: '#/definitions/DeptSaveSuccessModel'
         '404':
           description: Not Found
+  /dept/turnenable:
+    x-swagger-router-controller: common_turnenable
+    post:
+      description: 部门启用/禁用接口
+      tags:
+      - 部门
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 部门新数据
+          schema:
+            $ref: '#/definitions/CommonTurnEnableReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
 
 
   /feeitem/query:
@@ -1788,6 +1812,15 @@ definitions:
       description:
         type: string
         description: 备注
+  CommonTurnEnableReqModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 档案主键
+      enable:
+        type: boolean
+        description: 启用/禁用
   DeptSaveReqModel:
     type: object
     properties:

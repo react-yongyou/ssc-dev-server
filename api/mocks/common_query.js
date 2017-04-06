@@ -1,3 +1,7 @@
+/*eslint strict: ["error", "global"]*/
+
+"use strict";
+
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const utils = require('./utils');
@@ -23,14 +27,14 @@ function post(req, res) {
   const doctype = utils.getDocTypeFromQueryPath(
     req.swagger.operation.pathObject.path);
 
-  const condition = req.body.condition || '';
+  // const conditions = req.body.conditions;
   const begin = req.body.begin;
   const itemsPerPage = req.body.groupnum; // 每页显示数量
 
   const resObj = {
     __fake_server__: true,
-    "success": true,
-    "message": null,
+    success: true,
+    message: null,
   };
 
   // 根据基础档案类型，获取数据库中对应表的所有数据
@@ -39,8 +43,8 @@ function post(req, res) {
 
   // 为啥isEmpty返回的是Boolean对象?
   if (!db.isEmpty().valueOf()) {
-    var body = db.get('body').value();
-    debug('body: %s', JSON.stringify(body));
+    let body = db.get('body').value();
+    // debug('body: %s', JSON.stringify(body));
     // 对整个表数据进行分页，获取单页数据
     // TODO 由于数据库结构和后端定义的response结构不同，这里处理transform
     resObj.data = body.slice(begin, begin + itemsPerPage);
