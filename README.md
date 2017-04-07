@@ -11,7 +11,8 @@ ssc-dev-server是一个基于Express.js，为Web前端开发提供轻量化开�
 - 参照查询
 - 会计平台
 - 支持通过Swagger spec来定义API，并生成API文档（swagger-ui）
-
+- 支持模拟高网络延迟/高IO延迟，方便前端做异常处理
+- 支持请求结果中包含错误信息，方便前端做异常处理
 
 ## 如何使用
 
