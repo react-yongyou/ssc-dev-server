@@ -4,11 +4,10 @@
 
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
-const utils = require('./utils');
 const sleep = require('system-sleep');
 
-// 模仿网络和IO延迟
-const ENABLE_FAKE_IO_DELAY = 0;
+const utils = require('./utils');
+const config = require('./config');
 
 /**
  * 后端返回的类型不正确，比如应该把`"true"`改成`true`
@@ -33,9 +32,7 @@ function fixConditions(condition) {
 exports.post = function(req, res) {
 
   // 模仿网络延迟以及IO延迟
-  if (ENABLE_FAKE_IO_DELAY) {
-    sleep(1000);
-  }
+  sleep(config.IO_DELAY);
 
   // 这里使用通用处理的controller，需要从swaggerObj中获取到path
   // path中含有对应的档案类型
