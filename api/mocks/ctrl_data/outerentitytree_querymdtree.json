@@ -16,15 +16,15 @@
       "parentKey": null,
       "title": "总账凭证:友账簿凭证",
       "key": "@E@:G001ZM0000BILLTYPE000000000000000003",
-      "isLeaf": null,
-      "infoKey": "1",
+      "isLeaf": false,
+      "infoKey": "G001ZM0000MAPPINGDEF0000000000000001",
       "children": [
         {
           "parentKey": "@root@:C0",
           "title": "bodies:友账簿凭证表体",
           "key": "@E@:G001ZM0000BILLTYPE000000000000000004",
-          "isLeaf": null,
-          "infoKey": "1",
+          "isLeaf": false,
+          "infoKey": "G001ZM0000MAPPINGDEF0000000000000001",
           "children": [],
           "data": {
             "id": "G001ZM0000BILLTYPE000000000000000003",
@@ -33,7 +33,7 @@
             "displayName": "表体",
             "columnName": "bodies",
             "maxLength": 0,
-            "numberDigit": null,
+            "numberDigit": 0,
             "isExtend": false,
             "isSyncDB": false,
             "assemblyType": 40,
@@ -42,13 +42,12 @@
             "refEntity": "G001ZM0000BILLTYPE000000000000000004",
             "refEntityCode": null,
             "nullable": true,
-            "defaultvalue": null
-          },
-          "leaf": null
+            "defaultvalue": null,
+            "entityName": null
+          }
         }
       ],
-      "data": null,
-      "leaf": null
+      "data": null
     }
   ]
 }

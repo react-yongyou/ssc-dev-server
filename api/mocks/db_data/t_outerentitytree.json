@@ -3,79 +3,93 @@
     {
       "id": "accsubject",
       "lable": "科目",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "currency",
       "lable": "币种",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "debit_original",
       "lable": "借方原币",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "credit_original",
       "lable": "贷方原币",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "debit_org",
       "lable": "借方本币（组织）",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "credit_org",
       "lable": "贷方本币（组织）",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "description",
       "lable": "摘要",
-      "datatype": 0,
-      "length": 0,
+      "datatype": 20,
+      "length": 2000,
       "digit": 0,
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "id",
@@ -86,29 +100,39 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "src_entityid",
       "lable": "源实体",
-      "datatype": 0,
+      "datatype": 5,
       "length": 40,
       "digit": 0,
-      "refinfo": null,
-      "refinfocode": null,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "des_entityid",
       "lable": "目的实体",
-      "datatype": 0,
+      "datatype": 5,
       "length": 40,
       "digit": 0,
-      "refinfo": null,
-      "refinfocode": null,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
       "enumdata": null,
-      "hidden": null
+      "hidden": true,
+      "defaultvalue": {
+        "id": "G001ZM0000BILLTYPE000000000000000004",
+        "name": "友账簿凭证表体",
+        "code": "figlvoucher_b"
+      },
+      "entityName": null
     },
     {
       "id": "src_path",
@@ -119,7 +143,9 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": true,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "des_path",
@@ -130,7 +156,9 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": true,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "effector",
@@ -141,7 +169,9 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "copyproperties",
@@ -152,7 +182,9 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": null,
+      "defaultvalue": null,
+      "entityName": null
     },
     {
       "id": "mappingdefid",
@@ -163,82 +195,73 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null
+      "hidden": true,
+      "defaultvalue": "G001ZM0000MAPPINGDEF0000000000000001",
+      "entityName": null
     }
   ],
   "body": [
     {
-      "src_path": "",
-      "debit_original": "",
-      "des_path": "",
-      "debit_org": "",
-      "currency": "",
-      "id": "038AC355-BB75-44AE-8D64-F71EC10C4F2F",
-      "copyproperties": true,
-      "credit_org": "",
-      "description": "",
-      "credit_original": "",
-      "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
-      "accsubject": "xx",
-      "effector": "",
-      "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
-      "mappingdefid": "1"
-    },
-    {
-      "id": "2",
+      "id": "G001ZM0000MAPPINGENTITY0000000000002",
       "src_path": null,
       "copyproperties": false,
       "debit_original": "money",
-      "description": "外系统生成凭证",
-      "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
+      "description": "\"外系统生成凭证\"",
+      "src_entityid": {
+        "id": "G001ZM0000BILLTYPE000000000000000006",
+        "name": "友报账报销单2表体",
+        "code": "fierbill2_b1"
+      },
       "effector": null,
+      "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100005\"",
       "des_path": null,
-      "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
-      "mappingdefid": "1"
+      "des_entityid": {
+        "id": "G001ZM0000BILLTYPE000000000000000004",
+        "name": "友账簿凭证表体",
+        "code": "figlvoucher_b"
+      },
+      "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
+      "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
+      "debit_org": "money"
     },
     {
-      "id": "3",
+      "id": "G001ZM0000MAPPINGENTITY0000000000003",
       "src_path": null,
       "copyproperties": false,
-      "description": "外系统生成凭证",
+      "credit_org": "money",
+      "description": "\"外系统生成凭证\"",
       "credit_original": "money",
-      "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
+      "src_entityid": {
+        "id": "G001ZM0000BILLTYPE000000000000000006",
+        "name": "友报账报销单2表体",
+        "code": "fierbill2_b1"
+      },
       "effector": null,
+      "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100006\"",
       "des_path": null,
-      "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
-      "mappingdefid": "1"
+      "des_entityid": {
+        "id": "G001ZM0000BILLTYPE000000000000000004",
+        "name": "友账簿凭证表体",
+        "code": "figlvoucher_b"
+      },
+      "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
+      "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\""
     },
     {
-      "src_path": null,
-      "debit_original": "a",
-      "des_path": null,
-      "currency": "aa",
-      "debit_org": "a",
-      "id": "734F0EB2-FB1C-4B6C-969A-2F864F1790D2",
-      "copyproperties": true,
-      "credit_org": "a",
-      "credit_original": "a",
-      "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
-      "accsubject": "a",
-      "effector": null,
-      "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
-      "mappingdefid": "1"
-    },
-    {
-      "src_path": null,
-      "debit_original": "a",
-      "des_path": null,
-      "currency": "aa",
-      "debit_org": "a",
-      "id": "B865CC95-729D-445C-AEF8-E24A8428E5F5",
-      "copyproperties": true,
-      "credit_org": "a",
-      "credit_original": "a",
-      "src_entityid": "G001ZM0000BILLTYPE000000000000000002",
-      "accsubject": "a",
-      "effector": null,
-      "des_entityid": "G001ZM0000BILLTYPE000000000000000004",
-      "mappingdefid": "1"
+      "id": "SjTo0xAP6fBVtM8TBJlv2LRQViudAlGnDqS5Bldd",
+      "accsubject": "max( , )",
+      "currency": "min( , )",
+      "debit_original": "",
+      "credit_original": "",
+      "debit_org": "",
+      "credit_org": "",
+      "description": "",
+      "src_entityid": {
+        "id": "",
+        "code": "",
+        "name": ""
+      },
+      "effector": ""
     }
   ]
 }
