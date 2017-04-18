@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: 财务云 友账表 实体映射 API
+  title: 财务云 友账表 会计平台 实体映射 EntityMap API
   description: Move your app forward with the SSC API
   version: "1.0.0"
 # the domain of the service
@@ -126,6 +126,69 @@ paths:
           description: Not Found
 
 definitions:
+
+  HeadObject:
+    type: object
+    properties:
+      id:
+        type: string
+      lable:
+        type: string
+        description: |
+          用于在表格表头中显示的蚊子
+      datatype: 
+        type: integer
+        description: |
+          0 string 字符型
+          2 double 数值型
+          3 date 日期型
+          4 boolean 布尔型
+          5 ref 参照型
+          6 enum 枚举型
+      length:  
+        type: integer
+        description: |
+          用于在表单中限定字段的长度
+      digit:  
+        type: integer
+      refinfo: 
+        type: string
+        description: |
+          仅用于参照型
+          如果没有，则为null
+      refinfocode: 
+        type: string
+        description: |
+          仅用于参照型，作为`refCode`参数传给后端
+          如果没有，则为null
+      enumdata:
+        type: string
+        description: |
+          仅用于枚举型
+          如果没有，则为null
+      hidden: 
+        type: boolean
+        description: |
+          用于在表单中指定隐藏字段
+      defaultvalue: 
+        type: string
+        description: |
+          用于在表单中指定默认值
+      entityName: 
+        type: string
+        description: |
+    example:
+      id: "credit_org"
+      lable: "贷方本币（组织）"
+      datatype: 20
+      length: 2000
+      digit: 0
+      refinfo: null
+      refinfocode: null
+      enumdata: null
+      hidden: null
+      defaultvalue: null
+      entityName: null
 
   RequestModel:
     type: object
