@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: SSC 3.0 基础档案 API
+  title: 友报账 基础档案 API
   description: Move your app forward with the SSC API
   version: "1.0.0"
 # the domain of the service
@@ -14,16 +14,6 @@ basePath: /
 produces:
   - application/json
 paths:
-  /plat/basedoc:
-    # binds swagger app logic to a route
-    x-swagger-router-controller: basedocs
-    get:
-      description: 返回所有基础档案类型
-      responses:
-        '200':
-          description: Success
-          schema:
-            $ref: '#/definitions/BaseDocsModel'
 
   /ficloud_pub/initgrid:
     x-swagger-router-controller: ficloud_pub_initgrid
@@ -43,9 +33,6 @@ paths:
         description: |
           基础档案类型，包括：
           - dept
-          - renyuan
-          - xiangmu
-          - feiyongxiangmu
       responses:
         '200':
           description: Success
@@ -101,7 +88,7 @@ paths:
 # - save
 # - delete
 
-# 所有基础档案类型 - start
+# 所有通用基础档案类型 - start
 
 
   /accsubject/query:
@@ -1683,29 +1670,8 @@ paths:
         '404':
           description: Not Found
 
-# 所有基础档案类型 - end
+# 所有通用基础档案类型 - end
 
-  /plat/basedoc/qrybd:
-    x-swagger-router-controller: qrybd
-    get:
-      description: 查询基本档案（废弃接口）
-      tags:
-        - BaseDoc
-      responses:
-        '200':
-          description: Success
-          schema:
-            $ref: '#/definitions/SuccessModel'
-        '404':
-          description: Not Found
-      parameters:
-        - required: true
-          type: string
-          name: id
-          in: query
-          description: 基础档案ID
-      produces:
-        - application/json
 definitions:
   QueryConditionModel:
     type: object
@@ -1748,36 +1714,7 @@ definitions:
       groupnum:
         type: integer
         description: 分页数量
-  DeptQueryReqModel:
-    type: object
-    required:
-    - conditions
-    - begin
-    - groupnum
-    properties:
-      conditions:
-        $ref: '#/definitions/QueryConditionsModel'
-      paras:
-        type: string
-        description: 查询条件参数，非必须
-      fields:
-        type: string
-        description: 查询字段，非必须，空则查询全部字段
-      begin:
-        type: integer
-        description: 起始位置，用于分页。从0开始
-      groupnum:
-        type: integer
-        description: 分页数量
   CommonDeleteReqModel:
-    type: object
-    required:
-    - id
-    properties:
-      id:
-        type: string
-        description: 40位主键
-  DeptDeleteReqModel:
     type: object
     required:
     - id
@@ -1821,48 +1758,6 @@ definitions:
       enable:
         type: boolean
         description: 启用/禁用
-  DeptSaveReqModel:
-    type: object
-    properties:
-      id:
-        type: string
-        description: 部门主键，当为空的时候，新增，不为空，则修改
-      org:
-        type: string
-        description: 组织
-      code:
-        type: string
-        description: 部门编码
-      name:
-        type: string
-        description: 部门名称
-      name2:
-        type: string
-        description: name2
-      name3:
-        type: string
-        description: name3
-      name4:
-        type: string
-        description: name4
-      name5:
-        type: string
-        description: name5
-      name6:
-        type: string
-        description: name6
-      parentid:
-        type: string
-        description: 上级部门
-      personal:
-        type: string
-        description: 主管
-      enable:
-        type: boolean
-        description: 启用
-      description:
-        type: string
-        description: 备注
   BaseDocsModel:
     type: array
     items:
@@ -1918,51 +1813,6 @@ definitions:
               name:
                 type: string
                 description: 名称
-              enable:
-                type: string
-                description: 启用
-              description:
-                type: string
-                description: 备注
-  DeptSaveSuccessModel:
-    type: object
-    required:
-    - success
-    - message
-    - data
-    properties:
-      success:
-        type: boolean
-        description: 标志成功还是失败
-      message:
-        type: string
-        description: 当失败的时候用于显示失败信息
-      data:
-        type: object
-        required:
-        - head
-        properties:
-          head:
-            type: object
-            properties:
-              id:
-                type: string
-                description: 部门主键，当为空的时候，新增，不为空，则修改
-              org:
-                type: string
-                description: 组织
-              code:
-                type: string
-                description: 部门编码
-              name:
-                type: string
-                description: 部门名称
-              parentid:
-                type: string
-                description: 上级部门
-              personal:
-                type: string
-                description: 主管
               enable:
                 type: string
                 description: 启用
@@ -2125,3 +1975,119 @@ definitions:
       label: 公司
       type: string
       value: 用友网络科技股份有限公司
+  DeptQueryReqModel:
+    type: object
+    required:
+    - conditions
+    - begin
+    - groupnum
+    properties:
+      conditions:
+        $ref: '#/definitions/QueryConditionsModel'
+      paras:
+        type: string
+        description: 查询条件参数，非必须
+      fields:
+        type: string
+        description: 查询字段，非必须，空则查询全部字段
+      begin:
+        type: integer
+        description: 起始位置，用于分页。从0开始
+      groupnum:
+        type: integer
+        description: 分页数量
+  DeptSaveReqModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: 部门主键，当为空的时候，新增，不为空，则修改
+      org:
+        type: string
+        description: 组织
+      code:
+        type: string
+        description: 部门编码
+      name:
+        type: string
+        description: 部门名称
+      name2:
+        type: string
+        description: name2
+      name3:
+        type: string
+        description: name3
+      name4:
+        type: string
+        description: name4
+      name5:
+        type: string
+        description: name5
+      name6:
+        type: string
+        description: name6
+      parentid:
+        type: string
+        description: 上级部门
+      personal:
+        type: string
+        description: 主管
+      enable:
+        type: boolean
+        description: 启用
+      description:
+        type: string
+        description: 备注
+  DeptDeleteReqModel:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+        description: 40位主键
+  DeptSaveSuccessModel:
+    type: object
+    required:
+    - success
+    - message
+    - data
+    properties:
+      success:
+        type: boolean
+        description: 标志成功还是失败
+      message:
+        type: string
+        description: 当失败的时候用于显示失败信息
+      data:
+        type: object
+        required:
+        - head
+        properties:
+          head:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 部门主键，当为空的时候，新增，不为空，则修改
+              org:
+                type: string
+                description: 组织
+              code:
+                type: string
+                description: 部门编码
+              name:
+                type: string
+                description: 部门名称
+              parentid:
+                type: string
+                description: 上级部门
+              personal:
+                type: string
+                description: 主管
+              enable:
+                type: string
+                description: 启用
+              description:
+                type: string
+                description: 备注
