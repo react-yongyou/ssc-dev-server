@@ -1,0 +1,82 @@
+swagger: '2.0'
+info:
+  title: 财务云 友账表 公式编辑器 API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /ficloud
+produces:
+  - application/json
+
+paths:
+
+  /echart/metatree:
+    x-swagger-router-controller: echart_metatree
+    get:
+      description: 树查询接口
+      tags:
+      - 公式编辑器
+      produces:
+      - application/json
+      parameters:
+      - name: eid
+        in: query
+        description: 源实体id (source entity id)
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
+definitions:
+
+  SuccessResponseModel:
+    type: object
+    required:
+    - data
+    properties:
+      data:
+        type: array
+        description: 参照字段模型
+        items:
+          $ref: '#/definitions/ReferFieldModel'
+
+  ReferFieldModel:
+    type: object
+    required:
+    - id
+    - name
+    - code
+    properties:
+      id:
+        type: string
+        description: id
+      isLeaf:
+        type: string
+        description: id
+      name:
+        type: string
+        description: id
+      pid:
+        type: string
+        description: id
+      code:
+        type: string
+        description: id
+    example:
+      
+      id: 'E6CB6CBE-C701-48EC-A3EB-C823DF8DBEED'
+      isLeaf: 'true'
+      name: '服务中心'
+      pid: 'FBA1DBB5-24A2-4A78-A4D5-453F7CC46AA6'
+      code: '02'
