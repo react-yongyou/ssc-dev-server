@@ -9,7 +9,7 @@ const config = require('./config');
  * - 0 正常
  * - 1 查询失败
  */
-const ERROR_TYPE = 1;
+const ERROR_TYPE = 0;
 
 function post(req, res) {
   const TABLE_NAME = 'outerentitytree';
