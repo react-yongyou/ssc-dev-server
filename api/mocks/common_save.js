@@ -43,14 +43,11 @@ function post(req, res) {
   } else {
 
     try {
-      // 有些字段需要唯一性
-      if (doctype === 'dept') {
-        // code 编码 不能重复
-        if (db.get('body').find({code: data.code}).value() !== undefined) {
-          throw {
-            name: 'DuplicatedCodeError',
-            message: '保存失败。档案编码重复,请重新输入!'
-          }
+      // 所有基础档案类型的"编码"(code)不能重复
+      if (db.get('body').find({code: data.code}).value() !== undefined) {
+        throw {
+          name: 'DuplicatedCodeError',
+          message: '保存失败。档案编码重复,请重新输入!'
         }
       }
 
@@ -60,7 +57,7 @@ function post(req, res) {
         .write();
 
       resObj.data = newData;
-      resObj.message = `创建成功，新数据的主键：${newData.id}`;
+      resObj.message = `基础档案创建成功，新数据的主键：${newData.id}`;
 
     } catch (e) {
       if (e.name === 'DuplicatedCodeError') {
