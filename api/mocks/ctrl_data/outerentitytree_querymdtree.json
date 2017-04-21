@@ -2,12 +2,12 @@
   "__meta__": {
     "request": [
       "POST /ficloud_web/outerentitytree/querymdtree",
-      "Host: 10.1.218.36:8080",
+      "Host: 10.3.14.238",
       "Content-Type: application/json",
       "",
       "{",
-      "  \"billtypecode\": \"C0\",",
-      "  \"mappingdefid\": \"1\"",
+      "  \"billtypecode\": \"G001ZM0000BILLTYPEFIER00000000000002\",",
+      "  \"mappingdefid\": \"G001ZM0000MAPPINGDEF0000000000000001\"",
       "}"
     ]
   },
@@ -42,8 +42,7 @@
             "refEntity": "G001ZM0000BILLTYPE000000000000000004",
             "refEntityCode": null,
             "nullable": true,
-            "defaultvalue": null,
-            "entityName": null
+            "defaultvalue": null
           }
         }
       ],

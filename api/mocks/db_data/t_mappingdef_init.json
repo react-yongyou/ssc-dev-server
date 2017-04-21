@@ -10,8 +10,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "code",
@@ -23,8 +22,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "name",
@@ -36,8 +34,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "description",
@@ -49,8 +46,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "pk_org",
@@ -62,8 +58,7 @@
       "refinfocode": "org",
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "src_system",
@@ -75,8 +70,7 @@
       "refinfocode": "outersystem",
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "des_system",
@@ -88,8 +82,7 @@
       "refinfocode": "outersystem",
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "src_billtype",
@@ -101,8 +94,7 @@
       "refinfocode": "tradetype",
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "des_billtype",
@@ -114,8 +106,7 @@
       "refinfocode": "billtype",
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "src_action",
@@ -127,8 +118,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "des_action",
@@ -140,8 +130,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "effector",
@@ -153,8 +142,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     },
     {
       "id": "syncrun",
@@ -166,8 +154,7 @@
       "refinfocode": null,
       "enumdata": null,
       "hidden": null,
-      "defaultvalue": null,
-      "entityName": null
+      "defaultvalue": null
     }
   ],
   "body": [
@@ -175,18 +162,13 @@
       "id": "G001ZM0000MAPPINGDEF0000000000000001",
       "creator": null,
       "creationtime": null,
-      "modifier": {
-        "id": "ac1193d2-537f-4fde-ae26-5cb267db81ce",
-        "code": "wanghuap",
-        "name": "wanghuap"
-      },
-      "modifiedtime": "2017-04-01 11:25:05",
+      "modifier": null,
+      "modifiedtime": null,
       "pk_org": null,
       "pk_group": null,
       "description": null,
-      "ts": "2017-04-01 11:25:05",
+      "ts": null,
       "dr": null,
-      "state": 0,
       "code": "2641C0",
       "name": "差旅费报销单生成凭证",
       "name2": null,
@@ -228,14 +210,14 @@
       "def29": null,
       "def30": null,
       "src_system": {
-        "id": "000_DB3227E8-1BFD-4DEE-8969-7F075B38098B",
+        "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
         "code": "fier",
         "name": "友报账"
       },
       "des_system": {
-        "id": "000_A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
+        "id": "A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
         "code": "figl",
-        "name": "友帐表"
+        "name": "友账表"
       },
       "src_billtype": {
         "id": "G001ZM0000TRADETYPEFIER0000000000001",
@@ -252,8 +234,7 @@
       "effector": null,
       "syncrun": true,
       "parammapdef": [],
-      "entitymapdef": null,
-      "entityName": null
+      "entitymapdef": null
     }
   ]
 }
