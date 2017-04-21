@@ -125,6 +125,32 @@ paths:
         '404':
           description: Not Found
 
+  /ficloud/outerentitytree/updatenodedata:
+    x-swagger-router-controller: outerentitytree_updatenodedata
+    post:
+      description: |
+        修改接口
+      tags:
+      - 实体映射
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 节点信息
+          schema:
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/SuccessResponseModel'
+        '404':
+          description: Not Found
+
 definitions:
 
   HeadObject:
