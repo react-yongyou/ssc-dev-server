@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: 财务云 友报账 参照 API
+  title: 财务云 友账表 参照 API
   description: Move your app forward with the SSC API
   version: "1.0.0"
 # the domain of the service
@@ -10,7 +10,7 @@ schemes:
   - http
   - https
 # will be prefixed to all paths
-basePath: /
+basePath: /ficloud
 produces:
   - application/json
 

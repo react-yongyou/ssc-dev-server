@@ -14,8 +14,8 @@ function post(req, res) {
     information: '成功',
   };
 
-  debug(`Open database file: t_billtype.json`);
-  const db = low(`${__dirname}/db_data/t_billtype.json`);
+  debug(`Open database file: template_erp_loadbilltype.json`);
+  const db = low(`${__dirname}/ctrl_data/template_erp_loadbilltype.json`);
 
   // 为啥isEmpty返回的是Boolean对象?
   if (!db.isEmpty().valueOf()) {

@@ -1,0 +1,25 @@
+{
+  "body": [
+    {
+      "id": "A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
+      "isLeaf": "true",
+      "name": "友账表",
+      "pid": "",
+      "code": "figl"
+    },
+    {
+      "id": "DB3227E8-1BFD-4DEE-8969-7F075B37098B",
+      "isLeaf": "true",
+      "name": "U8",
+      "pid": "",
+      "code": "U8"
+    },
+    {
+      "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
+      "isLeaf": "true",
+      "name": "友报账",
+      "pid": "",
+      "code": "fier"
+    }
+  ]
+}

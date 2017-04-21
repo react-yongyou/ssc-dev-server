@@ -98,6 +98,7 @@ var swaggerConfigs = [
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
   },
+  // 友账表
   {
     swagger: 'swagger/entity.yaml',
     appRoot: __dirname,
@@ -118,6 +119,12 @@ var swaggerConfigs = [
   },
   {
     swagger: 'swagger/echart.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  },
+  {
+    swagger: 'swagger/yzb_refer.yaml',
     appRoot: __dirname,
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
