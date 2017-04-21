@@ -1,0 +1,265 @@
+{
+  "head": [
+    {
+      "id": "id",
+      "lable": "主键",
+      "datatype": 0,
+      "length": 40,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "code",
+      "lable": "编码",
+      "datatype": 0,
+      "length": 50,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "name",
+      "lable": "名称",
+      "datatype": 0,
+      "length": 100,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "pk_org",
+      "lable": "组织",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCORG0000000000000000",
+      "refinfocode": "org",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": "G001ZM0000BASEDOCDEFAULTORG000000000"
+    },
+    {
+      "id": "description",
+      "lable": "备注",
+      "datatype": 0,
+      "length": 400,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "enable",
+      "lable": "启用",
+      "datatype": 4,
+      "length": 10,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": "true"
+    },
+    {
+      "id": "classtype1",
+      "lable": "分类档案1",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "classtype2",
+      "lable": "分类档案2",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "classtype3",
+      "lable": "分类档案3",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "classtype4",
+      "lable": "分类档案4",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "classtype5",
+      "lable": "分类档案5",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    },
+    {
+      "id": "targettype",
+      "lable": "目标档案",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+      "refinfocode": "entity",
+      "enumdata": null,
+      "hidden": null,
+      "defaultvalue": null
+    }
+  ],
+  "body": [
+    {
+      "id": "AAF11377-4E32-42A0-A46D-707FE47AB379",
+      "creator": {
+        "id": "a6d18ef6-a2db-4102-a15f-c2f7a9384d96",
+        "code": "www_01",
+        "name": "www_01"
+      },
+      "creationtime": "2017-04-20 14:54:27",
+      "modifier": {
+        "id": "a6d18ef6-a2db-4102-a15f-c2f7a9384d96",
+        "code": "www_01",
+        "name": "www_01"
+      },
+      "modifiedtime": "2017-04-21 18:59:12",
+      "pk_org": null,
+      "pk_group": null,
+      "description": "",
+      "ts": "2017-04-21 18:59:12",
+      "dr": 0,
+      "code": "AR01",
+      "name": "还款映射表",
+      "name2": null,
+      "name3": null,
+      "name4": null,
+      "name5": null,
+      "name6": null,
+      "parentid": null,
+      "classifyid": null,
+      "enable": false,
+      "def1": null,
+      "def2": null,
+      "def3": null,
+      "def4": null,
+      "def5": null,
+      "def6": null,
+      "def7": null,
+      "def8": null,
+      "def9": null,
+      "def10": null,
+      "def11": null,
+      "def12": null,
+      "def13": null,
+      "def14": null,
+      "def15": null,
+      "def16": null,
+      "def17": null,
+      "def18": null,
+      "def19": null,
+      "def20": null,
+      "def21": null,
+      "def22": null,
+      "def23": null,
+      "def24": null,
+      "def25": null,
+      "def26": null,
+      "def27": null,
+      "def28": null,
+      "def29": null,
+      "def30": null,
+      "bodies": [
+        {
+          "id": "167F5C47-A2AA-4C68-8BA9-C5B92F20E1B7",
+          "description": "",
+          "dr": 0,
+          "classvalue1": {
+            "id": "19E7D3D4-2C15-4EDB-8BD2-54181ACBFD30",
+            "code": "FYXM01",
+            "name": "费用项目01"
+          },
+          "classvalue2": {
+            "id": "7BAD7ED2-5130-40CC-AB4A-97248200F73D",
+            "code": "XM01",
+            "name": "项目01"
+          },
+          "targetvalue": {
+            "id": "G001ZM0000DEFAULTACCSUBJECT000100003",
+            "code": "1012",
+            "name": "其他货币资金"
+          }
+        }
+      ],
+      "classtype1": {
+        "id": "G001ZM0000BASEDOCFEEITEM000000000000",
+        "code": "feeitem",
+        "name": "费用项目"
+      },
+      "classtype2": {
+        "id": "G001ZM0000BASEDOCPROJECT000000000000",
+        "code": "project",
+        "name": "项目"
+      },
+      "classtype3": null,
+      "classtype4": null,
+      "classtype5": null,
+      "classtype6": null,
+      "classtype7": null,
+      "classtype8": null,
+      "classtype9": null,
+      "classtype10": null,
+      "classtype11": null,
+      "classtype12": null,
+      "classtype13": null,
+      "classtype14": null,
+      "classtype15": null,
+      "classtype16": null,
+      "classtype17": null,
+      "classtype18": null,
+      "classtype19": null,
+      "classtype20": null,
+      "targettype": {
+        "id": "G001ZM0000BASEDOCACCSUBJECT000000000",
+        "code": "accsubject",
+        "name": "账簿科目"
+      }
+    }
+  ]
+}
