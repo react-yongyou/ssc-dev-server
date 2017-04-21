@@ -1780,9 +1780,6 @@ definitions:
       name:
         type: string
         description: 部门名称
-      parentid:
-        type: string
-        description: 上级部门
       personal:
         type: string
         description: 主管
