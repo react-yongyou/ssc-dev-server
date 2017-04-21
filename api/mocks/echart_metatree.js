@@ -1,6 +1,9 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
+const sleep = require('system-sleep');
+
 const utils = require('./utils');
+const config = require('./config');
 
 /**
  * - 0 正常
@@ -9,6 +12,9 @@ const utils = require('./utils');
 const ERROR_TYPE = 0;
 
 function get(req, res) {
+
+  // 模仿网络延迟以及IO延迟
+  sleep(config.IO_DELAY);
 
   const eid = req.body.eid; // G001ZM0000BILLTYPE000000000000000006
 
