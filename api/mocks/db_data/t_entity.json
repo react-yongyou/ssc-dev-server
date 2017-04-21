@@ -80,5 +80,385 @@
         }
       ]
     }
+  ],
+  "body": [
+    {
+      "id": "G001ZM0000BASE000ATT0000000000000000",
+      "isLeaf": "true",
+      "name": "属性",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASE000CLASSMAP00000000000",
+      "isLeaf": "true",
+      "name": "对照表",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASE000CLASSMAPB0000000000",
+      "isLeaf": "true",
+      "name": "对照表内容",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASE000ENTITY0000000000000",
+      "isLeaf": "true",
+      "name": "实体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCBOOK000000000000",
+      "isLeaf": "true",
+      "name": "账簿",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCELEMENT000000000",
+      "isLeaf": "true",
+      "name": "会计要素表",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCPERIOD0000000000",
+      "isLeaf": "true",
+      "name": "会计期间",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCPERIODSCHEME0000",
+      "isLeaf": "true",
+      "name": "会计期间方案",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCPERIODYEAR000000",
+      "isLeaf": "true",
+      "name": "会计年",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCPROPERTY00000000",
+      "isLeaf": "true",
+      "name": "会计要素",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCPURPOSES00000000",
+      "isLeaf": "true",
+      "name": "核算目的",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCSTANDARD00000000",
+      "isLeaf": "true",
+      "name": "会计准则",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCSUBJECT000000000",
+      "isLeaf": "true",
+      "name": "账簿科目",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCACCSUBJECTCHART0000",
+      "isLeaf": "true",
+      "name": "账簿科目表",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCBANK000000000000000",
+      "isLeaf": "true",
+      "name": "银行",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCBANKACCOUNT00000000",
+      "isLeaf": "true",
+      "name": "银行账户",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCBANKCLASS0000000000",
+      "isLeaf": "true",
+      "name": "银行类别",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCBILLTYPE00000000000",
+      "isLeaf": "true",
+      "name": "单据类型",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCCURRENCY00000000000",
+      "isLeaf": "true",
+      "name": "币种",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCDEPT000000000000000",
+      "isLeaf": "true",
+      "name": "部门",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCFEEITEM000000000000",
+      "isLeaf": "true",
+      "name": "费用项目",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCFEEITEMCLASS0000000",
+      "isLeaf": "true",
+      "name": "费用项目类型",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCMEASUREDOC000000000",
+      "isLeaf": "true",
+      "name": "计量单位",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCMULTIDIMENSION00000",
+      "isLeaf": "true",
+      "name": "多维结构",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCORG0000000000000000",
+      "isLeaf": "true",
+      "name": "组织",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCOUTERSYS00000000001",
+      "isLeaf": "true",
+      "name": "外部系统",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCPROJECT000000000000",
+      "isLeaf": "true",
+      "name": "项目",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCPROJECTCLASS0000000",
+      "isLeaf": "true",
+      "name": "项目类型",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCREMARK0000000000000",
+      "isLeaf": "true",
+      "name": "摘要",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCSUBJECT000000000000",
+      "isLeaf": "true",
+      "name": "科目",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCSUBJECTCHART0000000",
+      "isLeaf": "true",
+      "name": "科目表",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCTRADER0000000000000",
+      "isLeaf": "true",
+      "name": "客商",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCTRADERCLASS00000000",
+      "isLeaf": "true",
+      "name": "客商分类",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCTRADETYPE0000000000",
+      "isLeaf": "true",
+      "name": "交易类型",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCUSER000000000000000",
+      "isLeaf": "true",
+      "name": "用户",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCVALUERANG0000000000",
+      "isLeaf": "true",
+      "name": "值集",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEDOCVOUCHERTYPE00000000",
+      "isLeaf": "true",
+      "name": "凭证类型",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEMAPDEF0000000000000000",
+      "isLeaf": "true",
+      "name": "转换设置",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEMAPENTITY0000000000000",
+      "isLeaf": "true",
+      "name": "实体映射",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEOUTENTITY0000000000000",
+      "isLeaf": "true",
+      "name": "外部实体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BASEOUTPROPERTY00000000000",
+      "isLeaf": "true",
+      "name": "外部实体属性",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000003",
+      "isLeaf": "true",
+      "name": "友账簿凭证",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000004",
+      "isLeaf": "true",
+      "name": "友账簿凭证表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000005",
+      "isLeaf": "true",
+      "name": "友报账报销单",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000006",
+      "isLeaf": "true",
+      "name": "友报账报销单行程表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000007",
+      "isLeaf": "true",
+      "name": "友报账报销单住宿表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000008",
+      "isLeaf": "true",
+      "name": "友报账报销单其他表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000009",
+      "isLeaf": "true",
+      "name": "友报账报销单通讯表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000010",
+      "isLeaf": "true",
+      "name": "友报账报销单餐饮表体",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000011",
+      "isLeaf": "true",
+      "name": "友报账报销单补贴信息",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000012",
+      "isLeaf": "true",
+      "name": "友报账报销单分摊信息",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000013",
+      "isLeaf": "true",
+      "name": "友报账报销单表头其他信息",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000014",
+      "isLeaf": "true",
+      "name": "友报账借款单",
+      "pid": "",
+      "code": ""
+    },
+    {
+      "id": "G001ZM0000BILLTYPE000000000000000015",
+      "isLeaf": "true",
+      "name": "友报账还款单",
+      "pid": "",
+      "code": ""
+    }
   ]
 }
