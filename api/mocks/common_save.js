@@ -12,7 +12,6 @@ const config = require('./config');
 const ERROR_TYPE = 1;
 
 function post(req, res) {
-
   // 模仿网络延迟以及IO延迟
   sleep(config.IO_DELAY);
 
@@ -79,7 +78,7 @@ function post(req, res) {
       break;
     case 1:
       resObj.success = false;
-      resObj.message = '保存失败。null';
+      resObj.message = '保存失败。null（ssc-dev-server模拟失败）';
       resObj.data = null;
       resObj.code = 0;
       res.json(resObj);
