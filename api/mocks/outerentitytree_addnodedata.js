@@ -1,7 +1,9 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
-const utils = require('./utils');
 const sleep = require('system-sleep');
+const uuid = require('uuid');
+
+const utils = require('./utils');
 
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = true;
@@ -28,7 +30,7 @@ function post(req, res) {
   };
 
   try {
-    const newData = Object.assign({id: utils.makeid(40)}, data);
+    const newData = Object.assign(data, {id: uuid().toUpperCase()});
     db.get('body')
       .push(newData)
       .write();

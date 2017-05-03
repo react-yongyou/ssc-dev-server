@@ -1,5 +1,7 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
+const uuid = require('uuid');
+
 const utils = require('./utils');
 
 module.exports = {
@@ -32,7 +34,7 @@ function post(req, res) {
 
     resObj.message = `保存成功：res.data.id = ${data.id}`;
   } else {
-    const newData = Object.assign({id: utils.makeid(40)}, data);
+    const newData = Object.assign(data, {id: uuid().toUpperCase()});
     db.get('body')
       .push(newData)
       .write();

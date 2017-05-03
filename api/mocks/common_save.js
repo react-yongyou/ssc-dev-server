@@ -1,6 +1,7 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
 const sleep = require('system-sleep');
+const uuid = require('uuid');
 
 const utils = require('./utils');
 const config = require('./config');
@@ -54,7 +55,7 @@ function post(req, res) {
             }
           }
 
-          const newData = Object.assign({id: utils.makeid(40)}, data);
+          const newData = Object.assign(data, {id: uuid().toUpperCase()});
           db.get('body')
             .push(newData)
             .write();
