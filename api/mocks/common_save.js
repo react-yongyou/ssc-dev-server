@@ -9,7 +9,7 @@ const config = require('./config');
  * - 0 正常
  * - 1 查询失败
  */
-const ERROR_TYPE = 1;
+const ERROR_TYPE = 0;
 
 function post(req, res) {
   // 模仿网络延迟以及IO延迟
@@ -35,14 +35,16 @@ function post(req, res) {
     case 0:
       // TODO 如果字段类型为ref那么保存方式是不同的，需要单独处理
       if (data.id) {
+        // 进行保存操作
         db.get('body')
           .find({id: data.id})
           .assign(data)
           .write();
         resObj.data = data;
-
+        resObj.success = true;
         resObj.message = `保存成功：res.data.id = ${data.id}`;
       } else {
+        // 进行创建操作
         try {
           // 所有基础档案类型的"编码"(code)不能重复
           if (db.get('body').find({code: data.code}).value() !== undefined) {
