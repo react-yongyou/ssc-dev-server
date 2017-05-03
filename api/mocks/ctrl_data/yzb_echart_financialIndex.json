@@ -1,0 +1,53 @@
+{
+  "__meta__": {
+    "request": [
+      "GET /ficloud/echart/financialIndex HTTP/1.1",
+      "Host: fi.yonyoucloud.com"
+    ]
+  },
+  "data": {
+    "series": {
+      "asslib": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "grossprofit": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "netprofit": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "circulratio": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "xAxis": [
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月"
+    ],
+    "name": [
+      "资产负债率",
+      "毛利率",
+      "净利率",
+      "流动比率"
+    ]
+  }
+}

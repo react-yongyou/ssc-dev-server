@@ -1,0 +1,118 @@
+swagger: '2.0'
+info:
+  title: 财务云 友账表 未分类API
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /ficloud
+produces:
+  - application/json
+
+paths:
+
+  /org/getcurrentorg:
+    x-swagger-router-controller: yzb_org_getcurrentorg
+    post:
+      description: |
+        yzb_org_getcurrentorg
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: body
+        in: body
+        description: |
+          请求体
+        schema:
+          # 循环引用在运行时候遇到了这个错误，所以使用fake request来取代
+          # UNRESOLVABLE_REFERENCE
+          # Reference could not be resolved: #/definitions/TreeNodeModel
+          #$ref: '#/definitions/TreeNodeModel'
+          $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+  /echart/voucherNumber:
+    x-swagger-router-controller: yzb_echart_vouchernumber
+    get:
+      description: |
+        yzb_echart_vouchernumber
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+  /echart/financialIndex:
+    x-swagger-router-controller: yzb_echart_financialIndex
+    get:
+      description: |
+        yzb_echart_financialIndex
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+  /echart/financialAny:
+    x-swagger-router-controller: yzb_echart_financialAny
+    get:
+      description: |
+        yzb_echart_financialAny
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+  /echart/state:
+    x-swagger-router-controller: yzb_echart_state
+    get:
+      description: |
+        yzb_echart_state
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+definitions:
+
+  # POST body 需要是一个JSON对象
+  FakeRequestModel:
+    type: object
+    properties:
+      fake:
+        type: string
+
+  FakeResponseModel:
+    type: object
+    required:
+    - code
+    - information
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      information:
+        type: string
+        description: 失败描述信息

@@ -1,0 +1,25 @@
+{
+  "__meta__": {
+    "request": [
+      "GET /ficloud/echart/voucherNumber HTTP/1.1",
+      "Host: fi.yonyoucloud.com"
+    ]
+  },
+  "data": {
+    "series": [
+      "0",
+      {
+        "value": 0,
+        "itemStyle": {
+          "normal": {
+            "color": "#534"
+          }
+        }
+      }
+    ],
+    "xAxis": [
+      "待审核",
+      "待记账"
+    ]
+  }
+}

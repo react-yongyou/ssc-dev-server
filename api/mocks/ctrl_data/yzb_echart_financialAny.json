@@ -1,0 +1,50 @@
+{
+  "__meta__": {
+    "request": [
+      "GET /ficloud/echart/financialAny?topCodes=&secCodes=&isFirst=true HTTP/1.1",
+      "Host: fi.yonyoucloud.com"
+    ]
+  },
+  "data": {
+    "topseries": [
+      {
+        "value": 0,
+        "name": "所有者权益"
+      },
+      {
+        "value": 0,
+        "name": "成本"
+      },
+      {
+        "value": 0,
+        "name": "收入"
+      },
+      {
+        "value": 0,
+        "name": "费用"
+      },
+      {
+        "value": 0,
+        "name": "资产"
+      },
+      {
+        "value": 0,
+        "name": "负债"
+      },
+      {
+        "value": 0,
+        "name": "共同"
+      }
+    ],
+    "secseries": [],
+    "name": [
+      "所有者权益",
+      "成本",
+      "收入",
+      "费用",
+      "资产",
+      "负债",
+      "共同"
+    ]
+  }
+}

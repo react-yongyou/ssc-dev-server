@@ -128,7 +128,13 @@ var swaggerConfigs = [
     appRoot: __dirname,
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
-  }
+  },
+  {
+    swagger: 'swagger/yzb.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  },
 ];
 
 swaggerConfigs.forEach(config => {
