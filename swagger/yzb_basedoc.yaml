@@ -1880,12 +1880,10 @@ definitions:
     required:
     - conditions
     - begin
+    - groupnum
     properties:
       conditions:
-        type: array
-        description: 查询条件
-        items:
-          type: string
+        $ref: '#/definitions/QueryConditionsModel'
       paras:
         type: array
         description: 查询条件参数，非必须
