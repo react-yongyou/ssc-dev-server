@@ -123,7 +123,6 @@ paths:
         '404':
           description: Not Found
 
-
   /mappingdef/query:
     x-swagger-router-controller: t_mappingdef_query
     post:
@@ -187,6 +186,79 @@ paths:
           name: body
           in: body
           description: 转换规则模型新数据
+          schema:
+            $ref: '#/definitions/CommonSaveReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSaveSuccessModel'
+        '404':
+          description: Not Found
+
+  /trader/query:
+    x-swagger-router-controller: common_query
+    post:
+      description: 客商查询接口
+      tags:
+        - 客商模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/CommonQueryReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonSuccessModel'
+        '404':
+          description: Not Found
+  /trader/delete:
+    x-swagger-router-controller: common_delete
+    post:
+      description: 客商删除接口
+      tags:
+        - 客商模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 客商模型主键
+          schema:
+            $ref: '#/definitions/CommonDeleteReqModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/CommonDeleteSuccessModel'
+        '404':
+          description: Not Found
+  /trader/save:
+    x-swagger-router-controller: common_save
+    post:
+      description: 客商修改接口
+      tags:
+        - 客商模型
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 客商模型新数据
           schema:
             $ref: '#/definitions/CommonSaveReqModel'
       responses:
