@@ -4,85 +4,109 @@
       "id": "id",
       "lable": "主键",
       "datatype": 0,
-      "length": 40
+      "length": 40,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": null
     },
     {
       "id": "code",
       "lable": "编码",
       "datatype": 0,
-      "length": 40
+      "length": 50,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": null
     },
     {
       "id": "name",
       "lable": "名称",
       "datatype": 0,
-      "length": 200
+      "length": 100,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": null
     },
     {
-      "id": "name2",
-      "lable": "名称2",
-      "datatype": 0,
-      "length": 200
+      "id": "pk_org",
+      "lable": "组织",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCORG0000000000000000",
+      "refinfocode": "org",
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": "G001ZM0000BASEDOCDEFAULTORG000000000"
     },
     {
-      "id": "name3",
-      "lable": "名称3",
-      "datatype": 0,
-      "length": 200
-    },
-    {
-      "id": "name4",
-      "lable": "名称4",
-      "datatype": 0,
-      "length": 200
-    },
-    {
-      "id": "name5",
-      "lable": "名称5",
-      "datatype": 0,
-      "length": 200
-    },
-    {
-      "id": "name6",
-      "lable": "名称6",
-      "datatype": 0,
-      "length": 200
-    },
-    {
-      "id": "enable",
-      "lable": "启用",
-      "datatype": 4
+      "id": "parentid",
+      "lable": "上级项目类型",
+      "datatype": 5,
+      "length": 40,
+      "digit": 0,
+      "refinfo": "G001ZM0000BASEDOCPROJECTCLASS0000000",
+      "refinfocode": "projectclass",
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": null
     },
     {
       "id": "description",
       "lable": "备注",
       "datatype": 0,
-      "length": 500
+      "length": 400,
+      "digit": 0,
+      "refinfo": null,
+      "refinfocode": null,
+      "enumdata": null,
+      "hidden": false,
+      "defaultvalue": null
     }
   ],
   "body": [
     {
-      "id": "0DFF5E92-4174-4DB2-9744-CBE14A588D29",
-      "creator": "#000#",
-      "creationtime": "2017-02-16 11:11:40",
-      "modifier": null,
-      "modifiedtime": "2017-02-16 11:11:40",
-      "pk_org": "",
+      "id": "9150E9D8-682C-4092-8563-C7654B8107A2",
+      "creator": {
+        "id": "a6d18ef6-a2db-4102-a15f-c2f7a9384d96",
+        "code": "www_01",
+        "name": "www_01"
+      },
+      "creationtime": "2017-04-21 13:45:24",
+      "modifier": {
+        "id": "a6d18ef6-a2db-4102-a15f-c2f7a9384d96",
+        "code": "www_01",
+        "name": "www_01"
+      },
+      "modifiedtime": "2017-04-21 18:56:18",
+      "pk_org": {
+        "id": "G001ZM0000BASEDOCDEFAULTORG000000000",
+        "code": "0001",
+        "name": "TEST测试公司"
+      },
       "pk_group": null,
-      "description": null,
-      "ts": "2017-02-16 11:11:40",
+      "description": "",
+      "ts": "2017-04-21 18:56:18",
       "dr": 0,
-      "state": 0,
-      "code": "1234",
-      "name": "测试账簿",
-      "name_2": null,
-      "name_3": null,
-      "name_4": null,
-      "name_5": null,
-      "name_6": null,
+      "code": "XMLX01",
+      "name": "项目类型01",
+      "name2": null,
+      "name3": null,
+      "name4": null,
+      "name5": null,
+      "name6": null,
       "parentid": null,
       "classifyid": null,
-      "enable": false,
+      "enable": null,
       "def1": null,
       "def2": null,
       "def3": null,
@@ -112,13 +136,7 @@
       "def27": null,
       "def28": null,
       "def29": null,
-      "def30": null,
-      "shortname": "招商银行",
-      "accstandard": "",
-      "currency": "",
-      "accperiodscheme": "",
-      "subjectchart": "",
-      "multidimension": ""
+      "def30": null
     }
   ]
 }
