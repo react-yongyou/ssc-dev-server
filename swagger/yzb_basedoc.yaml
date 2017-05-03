@@ -66,7 +66,7 @@ paths:
           in: body
           description: 查询条件
           schema:
-            $ref: '#/definitions/CommonQueryReq2Model'
+            $ref: '#/definitions/CommonQueryReqModel'
       responses:
         '200':
           description: Success
@@ -1880,7 +1880,6 @@ definitions:
     required:
     - conditions
     - begin
-    - groupnum
     properties:
       conditions:
         $ref: '#/definitions/QueryConditionsModel'
@@ -1899,30 +1898,9 @@ definitions:
         description: 起始位置，用于分页。从0开始
       groupnum:
         type: integer
-        description: 分页数量
-  CommonQueryReq2Model:
-    description: |
-      不需要分页
-    type: object
-    required:
-    - conditions
-    - begin
-    properties:
-      conditions:
-        $ref: '#/definitions/QueryConditionsModel'
-      paras:
-        type: array
-        description: 查询条件参数，非必须
-        items:
-          type: string
-      fields:
-        type: array
-        items:
-          type: string
-        description: 查询字段，非必须，空则查询全部字段
-      begin:
-        type: integer
-        description: 起始位置，用于分页。从0开始
+        description: |
+          分页数量
+          当不传这个值的时候，可能会返回所有数据
   CommonDeleteReqModel:
     type: object
     required:
