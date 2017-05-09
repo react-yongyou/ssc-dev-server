@@ -135,6 +135,12 @@ var swaggerConfigs = [
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
   },
+  {
+    swagger: 'swagger/mappingdef.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  },
 ];
 
 swaggerConfigs.forEach(config => {

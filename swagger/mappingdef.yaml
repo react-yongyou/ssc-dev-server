@@ -1,0 +1,100 @@
+swagger: '2.0'
+info:
+  title: 财务云 友账表 转换模板（原平台接入配置，再原来的转换规则定义）
+  description: Move your app forward with the SSC API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+  - https
+# will be prefixed to all paths
+basePath: /ficloud
+produces:
+  - application/json
+
+paths:
+
+  /mappingdef/querycard:
+    x-swagger-router-controller: mappingdef_querycard
+    post:
+      description: |
+        mappingdef_querycard
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: body
+        in: body
+        description: |
+          请求体
+        schema:
+          #$ref: '#/definitions/FakeRequestModel'
+          $ref: '#/definitions/QueryCardRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+  /echart/voucherNumber:
+    x-swagger-router-controller: yzb_echart_vouchernumber
+    get:
+      description: |
+        yzb_echart_vouchernumber
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
+definitions:
+
+  # POST body 需要是一个JSON对象
+  FakeRequestModel:
+    type: object
+    properties:
+      fake:
+        type: string
+
+  FakeResponseModel:
+    type: object
+    required:
+    - code
+    - information
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      information:
+        type: string
+        description: 失败描述信息
+
+  QueryCardRequestModel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: |
+          比如:"G001ZM0000BILLTYPEFIER00000000000002"
+      src_system:
+        type: string
+        description: |
+          比如:"G001ZM0000BILLTYPEFIER00000000000002"
+      src_billtype:
+        type: string
+        description: |
+          比如:"G001ZM0000BILLTYPEFIER00000000000002"
+      des_system:
+        type: string
+        description: |
+          比如:"G001ZM0000BILLTYPEFIER00000000000002"
+      des_billtype:
+        type: string
+        description: |
+          比如:"G001ZM0000BILLTYPEFIER00000000000002"
