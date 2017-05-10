@@ -173,10 +173,20 @@
     },
     "tabs": [
       {
-        "data": [{
-          "id": "lkasjdlkfjasldf",
-          "src_path": "asdlkfjl"
-        }],
+        "data": [
+          {
+            "id": "lkasjdlkfjasldf",
+            "src_path": "asdlkfjl"
+          },
+          {
+            "id": "lkasjdlkfjasldf2",
+            "src_path": "asdlkf234jl"
+          },
+          {
+            "id": "lkasjdlkfjasldf3",
+            "src_path": "asdlk567fdhfjl"
+          }
+        ],
         "label": "友账簿凭证表体",
         "head": [
           {
