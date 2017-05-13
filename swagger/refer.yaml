@@ -76,7 +76,6 @@ definitions:
     required:
     - refCode
     - refType
-    - rootName
     properties:
       refCode:
         type: string
