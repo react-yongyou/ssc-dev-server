@@ -9,7 +9,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -21,7 +21,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -33,7 +33,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -45,7 +45,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -57,7 +57,7 @@
       "refinfo": "G001ZM0000BASEDOCORG0000000000000000",
       "refinfocode": "org",
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -69,7 +69,7 @@
       "refinfo": "G001ZM0000BASEDOCOUTERSYS00000000001",
       "refinfocode": "outersystem",
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -81,7 +81,7 @@
       "refinfo": "G001ZM0000BASEDOCOUTERSYS00000000001",
       "refinfocode": "outersystem",
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -93,7 +93,7 @@
       "refinfo": "G001ZM0000BASEDOCTRADETYPE0000000000",
       "refinfocode": "tradetype",
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -105,7 +105,7 @@
       "refinfo": "G001ZM0000BASEDOCBILLTYPE00000000000",
       "refinfocode": "billtype",
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -117,7 +117,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -129,7 +129,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -141,7 +141,7 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     },
     {
@@ -153,11 +153,163 @@
       "refinfo": null,
       "refinfocode": null,
       "enumdata": null,
-      "hidden": null,
+      "hidden": false,
       "defaultvalue": null
     }
   ],
   "body": [
+    {
+      "id": "556A675F-3B85-4A6A-BA80-804D72A612FF",
+      "creator": {
+        "id": "874a88c5-14ee-4657-803f-e2014b1763a2",
+        "code": "wanghuap",
+        "name": "wanghuap"
+      },
+      "creationtime": "2017-05-16 09:03:41",
+      "modifier": null,
+      "modifiedtime": "2017-05-16 09:03:41",
+      "pk_org": null,
+      "pk_group": null,
+      "description": "",
+      "ts": "2017-05-16 09:03:41",
+      "dr": 0,
+      "code": "",
+      "name": "",
+      "name2": null,
+      "name3": null,
+      "name4": null,
+      "name5": null,
+      "name6": null,
+      "parentid": null,
+      "classifyid": null,
+      "enable": null,
+      "def1": null,
+      "def2": null,
+      "def3": null,
+      "def4": null,
+      "def5": null,
+      "def6": null,
+      "def7": null,
+      "def8": null,
+      "def9": null,
+      "def10": null,
+      "def11": null,
+      "def12": null,
+      "def13": null,
+      "def14": null,
+      "def15": null,
+      "def16": null,
+      "def17": null,
+      "def18": null,
+      "def19": null,
+      "def20": null,
+      "def21": null,
+      "def22": null,
+      "def23": null,
+      "def24": null,
+      "def25": null,
+      "def26": null,
+      "def27": null,
+      "def28": null,
+      "def29": null,
+      "def30": null,
+      "src_system": {
+        "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
+        "code": "fier",
+        "name": "友报账"
+      },
+      "des_system": {
+        "id": "A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
+        "code": "figl",
+        "name": "友账表"
+      },
+      "src_billtype": null,
+      "des_billtype": null,
+      "src_action": null,
+      "des_action": null,
+      "effector": null,
+      "syncrun": true,
+      "parammapdef": [],
+      "entitymapdef": null
+    },
+    {
+      "id": "53DDE63F-8F76-49DD-B5C8-B981E2C572CA",
+      "creator": null,
+      "creationtime": null,
+      "modifier": null,
+      "modifiedtime": "2017-05-13 19:32:17",
+      "pk_org": null,
+      "pk_group": null,
+      "description": "",
+      "ts": "2017-05-13 19:32:17",
+      "dr": 0,
+      "code": "21111",
+      "name": "123",
+      "name2": null,
+      "name3": null,
+      "name4": null,
+      "name5": null,
+      "name6": null,
+      "parentid": null,
+      "classifyid": null,
+      "enable": null,
+      "def1": null,
+      "def2": null,
+      "def3": null,
+      "def4": null,
+      "def5": null,
+      "def6": null,
+      "def7": null,
+      "def8": null,
+      "def9": null,
+      "def10": null,
+      "def11": null,
+      "def12": null,
+      "def13": null,
+      "def14": null,
+      "def15": null,
+      "def16": null,
+      "def17": null,
+      "def18": null,
+      "def19": null,
+      "def20": null,
+      "def21": null,
+      "def22": null,
+      "def23": null,
+      "def24": null,
+      "def25": null,
+      "def26": null,
+      "def27": null,
+      "def28": null,
+      "def29": null,
+      "def30": null,
+      "src_system": {
+        "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
+        "code": "fier",
+        "name": "友报账"
+      },
+      "des_system": {
+        "id": "A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
+        "code": "figl",
+        "name": "友账表"
+      },
+      "src_billtype": {
+        "id": "G001ZM0000TRADETYPEFIER0000000000001",
+        "code": "UrSCCyJGGgD5caKsf6Njs",
+        "name": "支持差旅"
+      },
+      "des_billtype": {
+        "id": "G001ZM0000BILLTYPEFIER00000000000002",
+        "code": "C0",
+        "name": "总账凭证"
+      },
+      "src_action": null,
+      "des_action": null,
+      "effector": null,
+      "syncrun": false,
+      "parammapdef": [],
+      "entitymapdef": null
+    },
     {
       "id": "G001ZM0000MAPPINGDEF0000000000000001",
       "creator": null,

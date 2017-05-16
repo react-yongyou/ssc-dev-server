@@ -7,7 +7,22 @@
   },
   "data": {
     "form": {
-      "data": [],
+      "data": [
+        {
+          "id": "AC565E73-21CA-4EE6-A1ED-2B5E6DFC1BB6",
+          "src_path": null,
+          "copyproperties": false,
+          "src_entityid": null,
+          "effector": null,
+          "des_path": null,
+          "des_entityid": {
+            "id": "G001ZM0000BILLTYPE000000000000000003",
+            "name": "友账簿凭证",
+            "code": "figlvoucher"
+          },
+          "mappingdefid": "53DDE63F-8F76-49DD-B5C8-B981E2C572CA"
+        }
+      ],
       "head": [
         {
           "id": "id",
@@ -152,7 +167,7 @@
           "length": 2000,
           "digit": 0,
           "refinfo": null,
-          "refinfocode": null,
+          "refinfocode": "vouchertype",
           "enumdata": null,
           "hidden": false,
           "defaultvalue": null
@@ -164,29 +179,45 @@
           "length": 2000,
           "digit": 0,
           "refinfo": null,
-          "refinfocode": null,
+          "refinfocode": "accbook",
           "enumdata": null,
           "hidden": false,
           "defaultvalue": null
         }
       ]
     },
+    "ts": "2017-05-13 19:32:17",
+    "des_system": {
+      "id": "A8FD2BE5-E356-4CD3-A6EE-6DA68C72C3AC",
+      "name": "友账表",
+      "code": "figl"
+    },
+    "src_billtype": {
+      "id": "G001ZM0000TRADETYPEFIER0000000000001",
+      "name": "支持差旅",
+      "code": "UrSCCyJGGgD5caKsf6Njs"
+    },
+    "code": "21111",
+    "syncrun": false,
+    "modifier": "ac1193d2-537f-4fde-ae26-5cb267db81ce",
+    "id": "53DDE63F-8F76-49DD-B5C8-B981E2C572CA",
+    "pk_org": "G001ZM0000BASEDOCDEFAULTORG000000000",
+    "description": "",
+    "name": "123",
+    "src_system": {
+      "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
+      "name": "友报账",
+      "code": "fier"
+    },
+    "modifiedtime": "2017-05-13 19:32:17",
+    "des_billtype": {
+      "id": "G001ZM0000BILLTYPEFIER00000000000002",
+      "name": "总账凭证",
+      "code": "C0"
+    },
     "tabs": [
       {
-        "data": [
-          {
-            "id": "lkasjdlkfjasldf",
-            "src_path": "asdlkfjl"
-          },
-          {
-            "id": "lkasjdlkfjasldf2",
-            "src_path": "asdlkf234jl"
-          },
-          {
-            "id": "lkasjdlkfjasldf3",
-            "src_path": "asdlk567fdhfjl"
-          }
-        ],
+        "data": [],
         "label": "友账簿凭证表体",
         "head": [
           {
@@ -296,7 +327,7 @@
             "length": 2000,
             "digit": 0,
             "refinfo": null,
-            "refinfocode": null,
+            "refinfocode": "accsubject",
             "enumdata": null,
             "hidden": false,
             "defaultvalue": null
@@ -308,7 +339,7 @@
             "length": 2000,
             "digit": 0,
             "refinfo": null,
-            "refinfocode": null,
+            "refinfocode": "currency",
             "enumdata": null,
             "hidden": false,
             "defaultvalue": null
@@ -375,6 +406,7 @@
           }
         ]
       }
-    ]
+    ],
+    "dr": 0
   }
 }
