@@ -1,0 +1,71 @@
+---
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Echo
+  description: |
+    #### Echos back every URL, method, parameter and header
+    Feel free to make a path or an operation and use **Try Operation** to test it. The echo server will
+    render back everything.
+schemes:
+  - http
+host: mazimi-prod.apigee.net
+basePath: /mobx
+paths:
+  /:
+    x-swagger-router-controller: mobx_root
+    get:
+      responses:
+        200:
+          description: Echo GET
+    post:
+      responses:
+        200:
+          description: Echo POST
+      parameters:
+        - name: name
+          in: formData
+          description: name
+          type: string
+        - name: year
+          in: formData
+          description: year
+          type: string
+  /users:
+    x-swagger-router-controller: mobx_users
+    get:
+      responses:
+        200:
+          description: Echo GET
+    post:
+      responses:
+        200:
+          description: Echo POST
+      parameters:
+        - name: name
+          in: formData
+          description: name
+          type: string
+        - name: year
+          in: formData
+          description: year
+          type: string
+  /posts:
+    x-swagger-router-controller: mobx_posts
+    get:
+      responses:
+        200:
+          description: Echo GET
+    post:
+      responses:
+        200:
+          description: Echo POST
+      parameters:
+        - name: name
+          in: formData
+          description: name
+          type: string
+        - name: year
+          in: formData
+          description: year
+          type: string

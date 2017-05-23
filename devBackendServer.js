@@ -8,6 +8,11 @@ const bodyParser = require('body-parser');
 const SwaggerExpress = require('swagger-express-mw');
 
 const app = express();
+
+// JSON response format
+// http://expressjs.com/en/4x/api.html#app.settings.table
+app.set('json spaces', 2);
+
 app.use(compression());
 // 反向代理中间件需要在body-parser之前处理请求，否则会导致请求hang up
 // 需求修改了，请求需要跨域，所以取消反向代理
@@ -137,6 +142,13 @@ var swaggerConfigs = [
   },
   {
     swagger: 'swagger/mappingdef.yaml',
+    appRoot: __dirname,
+    configDir: 'swagger',
+    mockControllersDirs: 'api/mocks'
+  },
+  {
+    // Server for https://github.com/xxd3vin/mobx-form-ajax-demo
+    swagger: 'swagger/mobx.yaml',
     appRoot: __dirname,
     configDir: 'swagger',
     mockControllersDirs: 'api/mocks'
