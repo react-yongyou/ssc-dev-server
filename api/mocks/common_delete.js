@@ -1,7 +1,9 @@
 const debug = require('debug')('ssc:mocks');
 const low = require('lowdb');
-const utils = require('./utils');
 const sleep = require('system-sleep');
+
+const utils = require('./utils');
+const config = require('./config');
 
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = true;
@@ -13,9 +15,7 @@ module.exports = {
 function post(req, res) {
 
   // 模仿网络延迟以及IO延迟
-  if (ENABLE_FAKE_IO_DELAY) {
-    sleep(1000);
-  }
+  sleep(config.IO_DELAY);
 
   // 这里使用通用处理的controller，需要从swaggerObj中获取到path
   // path中含有对应的档案类型
