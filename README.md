@@ -30,6 +30,14 @@ npm install
 npm start
 ```
 
+## 在线服务（内网）
+
+http://api.yyssc.org
+
+```
+curl -X POST -d doctype=dept http://api.yyssc.org/ficloud/ficloud_pub/initgrid
+```
+
 ## Mock API with swagger
 
 ### echo.yaml
