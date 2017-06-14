@@ -14,7 +14,7 @@ swagger:
     _router:
       name: swagger_router
       mockMode: true
-      mockControllersDirs: [ api/mocks ]
+      mockControllersDirs: [ api/mocks, api/mocks/ybb ]
       controllersDirs: [ api/controllers ]
 
     _swagger_validate:

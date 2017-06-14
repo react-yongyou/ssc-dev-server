@@ -155,6 +155,14 @@ var swaggerConfigs = [
   },
 ];
 
+// 友报表
+swaggerConfigs.push({
+  swagger: 'swagger/ybb.yaml',
+  appRoot: __dirname,
+  configDir: 'swagger',
+  mockControllersDirs: 'api/mocks/ybb'
+})
+
 swaggerConfigs.forEach(config => {
   SwaggerExpress.create(config, (err, swaggerExpress) => {
     if (err) { throw err; }

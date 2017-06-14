@@ -28,6 +28,7 @@ npm install
 
 ```
 npm start
+DEBUG=swagger*,ssc* npm start # 显示调试信息
 ```
 
 ## 在线服务（内网）
@@ -83,3 +84,40 @@ View generated API docs with Swagger UI: https://xxd3vin.github.io/swagger-ui/?u
   - 基础档案 `yzb_basedoc.yaml`
     - 转换规则定义
   - 实体映射 `outerEntityTree.yaml`
+
+## 调试
+
+```
+vim ./node_modules/swagger-node-runner/fittings/swagger_router.js
+```
+
+```js
+        try {
+          var ctrlObj = require(controllerPath)
+          controller = dependencies && typeof ctrlObj === 'function' ? ctrlObj(dependencies) : ctrlObj
+          controllerFunctionsCache[controllerName] = controller;
+          debug('controller found', controllerPath);
+          break;
+        } catch (err) {
+          debug('xxdebug', err); // 添加这行，运行之后如果controller报错了，可以在terminal中看到
+          if (!mockMode && i === controllersDirs.length - 1) {
+            return cb(err);
+          }
+          debug('controller not in', controllerPath);
+        }
+```
+
+https://github.com/theganyo/swagger-node-runner
+
+## 添加新的controller dir
+
+```
+vim swagger/default.yaml
+```
+
+往`mockControllersDirs`字段添加新的目录
+
+```yaml
+    _router:
+      mockControllersDirs: [ api/mocks, api/mocks/ybb ]
+```

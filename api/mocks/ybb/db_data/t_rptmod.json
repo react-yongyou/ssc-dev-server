@@ -1,0 +1,64 @@
+{
+  "body": [
+    {
+      "id": "0",
+      "appid": "yonyoufi",
+      "tenantid": "haec24ng",
+      "fillable": 1,
+      "rpttypeid": "",
+      "code": "BalanceSheet0",
+      "name": "资产负债表0",
+      "filedata": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0"
+    },
+    {
+      "id": "1",
+      "appid": "yonyoufi",
+      "tenantid": "haec24ng",
+      "fillable": 1,
+      "rpttypeid": "",
+      "code": "BalanceSheet1",
+      "name": "资产负债表1",
+      "filedata": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0"
+    },
+    {
+      "id": "2",
+      "appid": "yonyoufi",
+      "tenantid": "haec24ng",
+      "fillable": 1,
+      "rpttypeid": "",
+      "code": "BalanceSheet2",
+      "name": "资产负债表2",
+      "filedata": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0"
+    }
+  ]
+}

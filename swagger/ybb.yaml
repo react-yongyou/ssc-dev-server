@@ -1,0 +1,64 @@
+swagger: '2.0'
+info:
+  title: 财务云 友报表
+  description: Move your app forward with the Yonyou ficloud API
+  version: "1.0.0"
+# the domain of the service
+host: api.yyssc.org
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /fireport
+produces:
+  - application/json
+
+paths:
+
+  /rptmod/query:
+    x-swagger-router-controller: rptmod_query
+    post:
+      description: 报表模板查询接口
+      tags:
+        - 报表模板
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 查询条件
+          schema:
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+
+
+definitions:
+
+  # POST body 需要是一个JSON对象
+  FakeRequestModel:
+    type: object
+    properties:
+      fake:
+        type: string
+
+  FakeResponseModel:
+    type: object
+    required:
+    - code
+    - information
+    properties:
+      code:
+        type: string
+        description: 0表示成功
+      information:
+        type: string
+        description: 失败描述信息
