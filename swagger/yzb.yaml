@@ -95,6 +95,29 @@ paths:
           schema:
             $ref: '#/definitions/FakeResponseModel'
 
+  /mappingentity/querychildren:
+    x-swagger-router-controller: mappingentity_querychildren
+    post:
+      description: |
+        mappingentity_querychildren
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - required: true
+        name: body
+        in: body
+        description: |
+          请求体
+        schema:
+          $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+
 definitions:
 
   # POST body 需要是一个JSON对象

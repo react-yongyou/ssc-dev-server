@@ -1,0 +1,343 @@
+{
+  "__meta__": {
+    "request": [
+      "POST /ficloud/mappingentity/querychildren HTTP/1.1",
+      "Host: 10.3.14.238"
+    ]
+  },
+  "data": {
+    "form": {
+      "data": [],
+      "head": [
+        {
+          "id": "id",
+          "lable": "实体标识",
+          "datatype": 0,
+          "length": 40,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": null,
+          "defaultvalue": null
+        },
+        {
+          "id": "src_entityid",
+          "lable": "源实体",
+          "datatype": 5,
+          "length": 40,
+          "digit": 0,
+          "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+          "refinfocode": "entity",
+          "enumdata": null,
+          "hidden": null,
+          "defaultvalue": null
+        },
+        {
+          "id": "des_entityid",
+          "lable": "目的实体",
+          "datatype": 5,
+          "length": 40,
+          "digit": 0,
+          "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+          "refinfocode": "entity",
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": {
+            "id": "G001ZM0000BILLTYPE000000000000000004",
+            "name": "友账簿凭证表体",
+            "code": "figlvoucher_b"
+          }
+        },
+        {
+          "id": "src_path",
+          "lable": "源路径",
+          "datatype": 0,
+          "length": 400,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": null
+        },
+        {
+          "id": "des_path",
+          "lable": "目的路径",
+          "datatype": 0,
+          "length": 400,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": null
+        },
+        {
+          "id": "effector",
+          "lable": "生效条件",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": null,
+          "defaultvalue": null
+        },
+        {
+          "id": "copyproperties",
+          "lable": "复制属性",
+          "datatype": 4,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": null
+        },
+        {
+          "id": "mappingdefid",
+          "lable": "主表主键",
+          "datatype": 0,
+          "length": 40,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": null
+        },
+        {
+          "id": "accsubject",
+          "lable": "科目",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": "accsubject",
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "currency",
+          "lable": "币种",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": "currency",
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "debit_original",
+          "lable": "借方原币",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "credit_original",
+          "lable": "贷方原币",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "debit_org",
+          "lable": "借方本币（组织）",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "credit_org",
+          "lable": "贷方本币（组织）",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "description",
+          "lable": "摘要",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": null,
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": false,
+          "defaultvalue": null
+        },
+        {
+          "id": "clientauxiliary",
+          "lable": "辅助核算",
+          "datatype": 20,
+          "length": 2000,
+          "digit": 0,
+          "refinfo": "G001ZM0000BILLTYPE000000000000000050",
+          "refinfocode": null,
+          "enumdata": null,
+          "hidden": true,
+          "defaultvalue": null
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "data": [],
+        "label": "友账表辅助核算",
+        "head": [
+          {
+            "id": "id",
+            "lable": "实体标识",
+            "datatype": 0,
+            "length": 40,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": null,
+            "defaultvalue": null
+          },
+          {
+            "id": "src_entityid",
+            "lable": "源实体",
+            "datatype": 5,
+            "length": 40,
+            "digit": 0,
+            "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+            "refinfocode": "entity",
+            "enumdata": null,
+            "hidden": null,
+            "defaultvalue": null
+          },
+          {
+            "id": "des_entityid",
+            "lable": "目的实体",
+            "datatype": 5,
+            "length": 40,
+            "digit": 0,
+            "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+            "refinfocode": "entity",
+            "enumdata": null,
+            "hidden": true,
+            "defaultvalue": {
+              "id": "G001ZM0000BILLTYPE000000000000000050",
+              "name": "友账表辅助核算",
+              "code": "figlvoucher_ass"
+            }
+          },
+          {
+            "id": "src_path",
+            "lable": "源路径",
+            "datatype": 0,
+            "length": 400,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": true,
+            "defaultvalue": null
+          },
+          {
+            "id": "des_path",
+            "lable": "目的路径",
+            "datatype": 0,
+            "length": 400,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": true,
+            "defaultvalue": null
+          },
+          {
+            "id": "effector",
+            "lable": "生效条件",
+            "datatype": 20,
+            "length": 2000,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": null,
+            "defaultvalue": null
+          },
+          {
+            "id": "copyproperties",
+            "lable": "复制属性",
+            "datatype": 4,
+            "length": 2000,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": true,
+            "defaultvalue": null
+          },
+          {
+            "id": "mappingdefid",
+            "lable": "主表主键",
+            "datatype": 0,
+            "length": 40,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": true,
+            "defaultvalue": null
+          },
+          {
+            "id": "auxiliarytype",
+            "lable": "辅助核算类型",
+            "datatype": 20,
+            "length": 2000,
+            "digit": 0,
+            "refinfo": "G001ZM0000BASE000ENTITY0000000000000",
+            "refinfocode": "entity",
+            "enumdata": null,
+            "hidden": false,
+            "defaultvalue": null
+          },
+          {
+            "id": "auxiliaryvalue",
+            "lable": "辅助核算值",
+            "datatype": 20,
+            "length": 2000,
+            "digit": 0,
+            "refinfo": null,
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": false,
+            "defaultvalue": null
+          }
+        ]
+      }
+    ]
+  }
+}
