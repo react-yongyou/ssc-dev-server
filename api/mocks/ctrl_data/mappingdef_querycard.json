@@ -6,30 +6,29 @@
     ]
   },
   "data": {
-    "id": "G001ZM0000MAPPINGDEF0000000000000001",
-    "src_action": "add",
     "form": {
       "data": [
         {
-          "id": "G001ZM0000MAPPINGENTITY0000000000001",
           "src_path": "",
-          "copyproperties": false,
+          "des_path": "",
+          "parentid": null,
+          "attachedbill": "1",
+          "id": "G001ZM0000MAPPINGENTITY0000000000001",
           "pk_org": " bankAccountKey  bankAccountKey \"G001ZM0000BASEDOCDEFAULTORG000000000\"",
+          "copyproperties": false,
           "src_entityid": {
             "id": "G001ZM0000BASEDOCACCELEMENT000000000",
             "name": "会计要素表",
             "code": "accelement"
           },
           "effector": null,
-          "des_path": "",
           "des_entityid": {
             "id": "G001ZM0000BILLTYPE000000000000000003",
             "name": "友账簿凭证",
             "code": "figlvoucher"
           },
-          "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
           "maketime": "\"2017-03-31 00:00:00\"",
-          "attachedbill": "1",
+          "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
           "vouchertype": "\"G001ZM0000VOUCHERTYPE000000000000001\""
         }
       ],
@@ -202,142 +201,150 @@
       "code": "figl"
     },
     "des_action": "add",
-    "name": "差旅费报销单生成凭证",
     "src_billtype": {
       "id": "G001ZM0000TRADETYPEFIER0000000000001",
       "name": "支持差旅",
       "code": "UrSCCyJGGgD5caKsf6Njs"
     },
+    "enable": true,
+    "state": 0,
+    "code": "2641C0",
+    "syncrun": true,
+    "id": "G001ZM0000MAPPINGDEF0000000000000001",
+    "src_action": "add",
+    "name": "差旅费报销单生成凭证",
     "src_system": {
       "id": "DB3227E8-1BFD-4DEE-8969-7F075B38098B",
       "name": "友报账",
       "code": "fier"
     },
-    "enable": true,
     "des_billtype": {
       "id": "G001ZM0000BILLTYPEFIER00000000000002",
       "name": "总账凭证",
       "code": "C0"
     },
-    "code": "2641C0",
-    "syncrun": true,
     "tabs": [
       {
         "data": [
           {
-            "id": "G001ZM0000MAPPINGENTITY0000000000002",
             "src_path": "",
-            "copyproperties": false,
             "debit_original": "money",
+            "des_path": "",
+            "parentid": null,
+            "debit_org": "money",
+            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
+            "id": "G001ZM0000MAPPINGENTITY0000000000002",
+            "copyproperties": false,
             "description": "\"外系统生成凭证\"",
             "src_entityid": {
               "id": "G001ZM0000BASEDOCTRADERCLASS00000000",
               "name": "客商分类",
               "code": "traderclass"
             },
-            "effector": " date  tagContent  note ",
             "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100005\"",
-            "des_path": "",
+            "effector": " date  tagContent  note ",
             "des_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000004",
               "name": "友账簿凭证表体",
               "code": "figlvoucher_b"
             },
-            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
-            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
-            "debit_org": "money"
+            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001"
           },
           {
-            "id": "G001ZM0000MAPPINGENTITY0000000000003",
             "src_path": null,
-            "copyproperties": false,
+            "des_path": null,
+            "parentid": null,
+            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
+            "id": "G001ZM0000MAPPINGENTITY0000000000003",
             "credit_org": "money",
-            "description": "\"外系统生成凭证\"",
+            "copyproperties": false,
             "credit_original": "money",
+            "description": "\"外系统生成凭证\"",
             "src_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000006",
               "name": "友报账报销单行程表体",
               "code": "fierbxd_travel"
             },
-            "effector": null,
             "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100006\"",
-            "des_path": null,
+            "effector": null,
             "des_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000004",
               "name": "友账簿凭证表体",
               "code": "figlvoucher_b"
             },
-            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
-            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\""
+            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001"
           },
           {
-            "id": "G001ZM0000MAPPINGENTITY0000000000004",
             "src_path": null,
-            "copyproperties": false,
             "debit_original": "money",
-            "description": "\"外系统生成凭证\"",
-            "src_entityid": {
-              "id": "G001ZM0000BILLTYPE000000000000000007",
-              "name": "友报账报销单住宿表体",
-              "code": "fierbxd_hotel"
-            },
-            "effector": null,
-            "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100005\"",
             "des_path": null,
-            "des_entityid": {
-              "id": "G001ZM0000BILLTYPE000000000000000004",
-              "name": "友账簿凭证表体",
-              "code": "figlvoucher_b"
-            },
-            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
+            "parentid": null,
+            "debit_org": "money",
             "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
-            "debit_org": "money"
-          },
-          {
-            "id": "G001ZM0000MAPPINGENTITY0000000000005",
-            "src_path": null,
+            "id": "G001ZM0000MAPPINGENTITY0000000000004",
             "copyproperties": false,
-            "credit_org": "money",
             "description": "\"外系统生成凭证\"",
-            "credit_original": "money",
             "src_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000007",
               "name": "友报账报销单住宿表体",
               "code": "fierbxd_hotel"
             },
+            "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100005\"",
             "effector": null,
-            "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100006\"",
-            "des_path": null,
             "des_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000004",
               "name": "友账簿凭证表体",
               "code": "figlvoucher_b"
             },
-            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
-            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\""
+            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001"
           },
           {
-            "id": "G001ZM0000MAPPINGENTITY0000000000007",
             "src_path": null,
+            "des_path": null,
+            "parentid": null,
+            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
+            "id": "G001ZM0000MAPPINGENTITY0000000000005",
+            "credit_org": "money",
             "copyproperties": false,
+            "credit_original": "money",
+            "description": "\"外系统生成凭证\"",
+            "src_entityid": {
+              "id": "G001ZM0000BILLTYPE000000000000000007",
+              "name": "友报账报销单住宿表体",
+              "code": "fierbxd_hotel"
+            },
+            "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100006\"",
+            "effector": null,
+            "des_entityid": {
+              "id": "G001ZM0000BILLTYPE000000000000000004",
+              "name": "友账簿凭证表体",
+              "code": "figlvoucher_b"
+            },
+            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001"
+          },
+          {
+            "src_path": null,
             "debit_original": "subsidyUnits*subsidyDays",
+            "des_path": null,
+            "parentid": null,
+            "debit_org": "subsidyUnits*subsidyDays",
+            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
+            "id": "G001ZM0000MAPPINGENTITY0000000000007",
+            "copyproperties": false,
             "description": "\"外系统生成凭证\"",
             "src_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000011",
               "name": "友报账报销单补贴信息",
               "code": "fierbxd_subsidy"
             },
-            "effector": null,
             "accsubject": "\"G001ZM0000DEFAULTACCSUBJECT000100006\"",
-            "des_path": null,
+            "effector": null,
             "des_entityid": {
               "id": "G001ZM0000BILLTYPE000000000000000004",
               "name": "友账簿凭证表体",
               "code": "figlvoucher_b"
             },
-            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001",
-            "currency": "\"G001ZM0000DEFAULTCURRENCT00000000001\"",
-            "debit_org": "subsidyUnits*subsidyDays"
+            "mappingdefid": "G001ZM0000MAPPINGDEF0000000000000001"
           }
         ],
         "label": "友账簿凭证表体",
@@ -524,6 +531,18 @@
             "refinfocode": null,
             "enumdata": null,
             "hidden": false,
+            "defaultvalue": null
+          },
+          {
+            "id": "clientauxiliary",
+            "lable": "辅助核算",
+            "datatype": 20,
+            "length": 2000,
+            "digit": 0,
+            "refinfo": "G001ZM0000BILLTYPE000000000000000050",
+            "refinfocode": null,
+            "enumdata": null,
+            "hidden": true,
             "defaultvalue": null
           }
         ]
