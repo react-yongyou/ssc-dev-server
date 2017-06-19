@@ -1,0 +1,58 @@
+{
+  "body": [
+    {
+      "id": "0",
+      "fillable": 1,
+      "code": "BalanceSheet0",
+      "name": "资产负债表0",
+      "modfiles": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0",
+      "modstatus": 1
+    },
+    {
+      "id": "1",
+      "fillable": 1,
+      "code": "BalanceSheet1",
+      "name": "资产负债表1",
+      "modfiles": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0",
+      "modstatus": 1
+    },
+    {
+      "id": "2",
+      "fillable": 1,
+      "code": "BalanceSheet2",
+      "name": "资产负债表2",
+      "modfiles": [
+        {
+          "id": "0",
+          "filename": "BalanceSheet_p.cpt",
+          "isparent": "0",
+          "ts": "2016-10-12 11:00:23",
+          "dr": "0"
+        }
+      ],
+      "ts": "2016-10-12 11:00:23",
+      "dr": "0",
+      "modstatus": 1
+    }
+  ]
+}
