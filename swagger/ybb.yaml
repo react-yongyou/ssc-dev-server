@@ -90,6 +90,86 @@ paths:
         '404':
           description: Not Found
 
+#  /rptfilemanage/upload:
+#    x-swagger-router-controller: rptfilemanage_upload
+#    post:
+#      description: 报表模板上传接口
+#      tags:
+#        - 报表模板
+#      consumes:
+#      - multipart/form-data
+#      produces:
+#      - application/json
+#      parameters:
+#        - required: true
+#          name: modid
+#          in: formData
+#          type: string
+#          description: 报表模板id
+#        - required: true
+#          name: modcode
+#          in: formData
+#          type: string
+#          description: 报表模板code
+#        - required: true
+#          name: files
+#          in: formData
+#          type: file
+#          description: 报表模板需要上传的文件
+#      responses:
+#        '200':
+#          description: Success
+#          schema:
+#            $ref: '#/definitions/FakeResponseModel'
+#        '404':
+#          description: Not Found
+
+  /rptmod/download:
+    x-swagger-router-controller: rptmod_download
+    post:
+      description: 报表模板下载/导出接口
+      tags:
+        - 报表模板
+      consumes:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 报表模板一个数据模型
+          schema:
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+
+  /rptmod/putHomePage:
+    x-swagger-router-controller: rptmod_puthomepage
+    post:
+      description: 报表模板置于首页
+      tags:
+        - 报表模板
+      consumes:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 报表模板一个数据模型
+          schema:
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+
 definitions:
 
   # POST body 需要是一个JSON对象

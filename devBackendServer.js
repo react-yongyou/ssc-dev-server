@@ -3,11 +3,17 @@
 const path = require('path');
 const compression = require('compression');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
-// const multer = require('multer');
+// multer is built into swagger-node via swagger-tools
+// https://github.com/swagger-api/swagger-node/issues/265#issuecomment-127832535
+const multer = require('multer');
 const SwaggerExpress = require('swagger-express-mw');
 
 const app = express();
+
+// Enable All CORS Requests
+app.use(cors());
 
 // JSON response format
 // http://expressjs.com/en/4x/api.html#app.settings.table
@@ -19,7 +25,7 @@ app.use(compression());
 // app.use(require('./server/routes/aliyun')());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-// var upload = multer(); // for parsing multipart/form-data
+const upload = multer({ dest: 'uploads/' }); // for parsing multipart/form-data
 
 app.use('/', express.static(path.join(__dirname + '/client')));
 app.use('/swagger/basedoc.yaml',
@@ -30,6 +36,9 @@ app.use(require('./server/routes/fakeApiRole')());
 app.use(require('./server/routes/fakeApiPermission')());
 app.use(require('./server/routes/fakeApiArchSetting')());
 app.use(require('./server/routes/fakeApiNCSync')());
+
+// 临时放在这里进行测试
+app.post('/fireport/rptfilemanage/upload', upload.array('files', 12), require('./api/mocks/ybb/rptfilemanage_upload').post);
 
 // Create a mock API with swagger
 

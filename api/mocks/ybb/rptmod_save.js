@@ -26,7 +26,7 @@ function post(req, res) {
   // 根据基础档案类型，获取数据库中对应表的所有数据
   debug(`Open database file: t_${doctype}.json`);
   const db = low(`${__dirname}/db_data/t_${doctype}.json`);
-  const data = req.body;
+  const reqObj = req.body;
 
   const resObj = {
     __fake_server__: true,
@@ -36,27 +36,29 @@ function post(req, res) {
     default:
     case 0:
       // TODO 如果字段类型为ref那么保存方式是不同的，需要单独处理
-      if (data.id) {
+      if (reqObj.id) {
         // 进行保存操作
         db.get('body')
-          .find({id: data.id})
-          .assign(data)
+          .find({id: reqObj.id})
+          .assign(reqObj)
           .write();
-        resObj.data = data;
+        resObj.data = reqObj;
         resObj.success = true;
-        resObj.message = `保存成功：res.data.id = ${data.id}`;
+        resObj.message = `保存成功：res.data.id = ${reqObj.id}`;
       } else {
         // 进行创建操作
         try {
           // 所有基础档案类型的"编码"(code)不能重复
-          if (db.get('body').find({code: data.code}).value() !== undefined) {
+          if (db.get('body').find({code: reqObj.code}).value() !== undefined) {
             throw {
               name: 'DuplicatedCodeError',
               message: '保存失败。档案编码重复,请重新输入!'
             }
           }
 
-          const newData = Object.assign(data, {id: uuid().toUpperCase()});
+          const newData = Object.assign(reqObj, {
+            id: uuid().toUpperCase(),
+          });
           db.get('body')
             .push(newData)
             .write();
