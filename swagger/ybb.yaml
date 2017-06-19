@@ -65,6 +65,31 @@ paths:
         '404':
           description: Not Found
 
+  /rptmod/delete:
+    x-swagger-router-controller: rptmod_delete
+    post:
+      description: 报表模板删除接口
+      tags:
+        - 报表模板
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+        - required: true
+          name: body
+          in: body
+          description: 报表模板一个数据模型
+          schema:
+            $ref: '#/definitions/FakeRequestModel'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FakeResponseModel'
+        '404':
+          description: Not Found
+
 definitions:
 
   # POST body 需要是一个JSON对象
