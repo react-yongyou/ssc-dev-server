@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "start": "npm run devBackend",
-    "devBackend": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch ./devBackendServer.js --watch api --watch swagger --ignore db_data ./devBackendServer.js",
+    "start": "pm2 start devBackendServer.js --log-date-format 'DD-MM HH:mm:ss.SSS'",
+    "devBackend": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch devBackendServer.js --watch api --watch swagger --ignore db_data devBackendServer.js",
     "lint": "eslint docs src test tools webpack *.js",
     "db:reset": "node api/mocks/reset_db.js"
   },
@@ -39,6 +39,7 @@
     "install": "^0.10.1",
     "isomorphic-fetch": "^2.1.1",
     "lowdb": "^0.15.5",
+    "morgan": "^1.7.0",
     "node-sass": "^3.13.0",
     "nodemon": "^1.11.0",
     "npm": "^5.0.3",

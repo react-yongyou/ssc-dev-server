@@ -3,6 +3,7 @@
 const path = require('path');
 const compression = require('compression');
 const express = require('express');
+const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 // multer is built into swagger-node via swagger-tools
@@ -11,6 +12,9 @@ const multer = require('multer');
 const SwaggerExpress = require('swagger-express-mw');
 
 const app = express();
+
+// HTTP request logger middleware for node.js
+app.use(morgan('dev'));
 
 // Enable All CORS Requests
 app.use(cors());

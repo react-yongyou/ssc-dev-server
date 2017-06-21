@@ -46,6 +46,7 @@ exports.post = function(req, res) {
 
   switch(ERROR_TYPE) {
     case 0:
+      console.log('[common_query] in');
 
       // 这里使用通用处理的controller，需要从swaggerObj中获取到path
       // path中含有对应的档案类型

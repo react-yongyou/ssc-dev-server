@@ -31,6 +31,12 @@ npm start
 DEBUG=swagger*,ssc* npm start # 显示调试信息
 ```
 
+## Production server
+
+- Start web server `pm2 start devBackendServer.js`
+- Stop web server `pm2 stop devBackendServer`
+- Start web server with JSON `pm2 start app.json`
+
 ## 在线服务（内网）
 
 http://api.yyssc.org
