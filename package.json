@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start devBackendServer.js --log-date-format 'DD-MM HH:mm:ss.SSS'",
-    "devBackend": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch devBackendServer.js --watch api --watch swagger --ignore db_data devBackendServer.js",
+    "start": "pm2 start devServer.js --log-date-format 'DD-MM HH:mm:ss.SSS'",
+    "dev": "cross-env NODE_ENV=development nodemon --ext js,yaml --watch devServer.js --watch api --watch swagger --ignore db_data devServer.js",
     "lint": "eslint docs src test tools webpack *.js",
     "db:reset": "node api/mocks/reset_db.js"
   },

@@ -1,5 +1,5 @@
 {
-  "script"          : "devBackendServer.js",
+  "script"          : "devServer.js",
   "error_file"      : "err.log",
   "out_file"        : "out.log",
   "merge_logs"      : true,
