@@ -14,7 +14,7 @@ const SwaggerExpress = require('swagger-express-mw');
 const app = express();
 
 // HTTP request logger middleware for node.js
-app.use(morgan('dev'));
+app.use(morgan('combined'));
 
 // Enable All CORS Requests
 app.use(cors());
