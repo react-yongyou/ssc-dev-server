@@ -31,7 +31,11 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 const upload = multer({ dest: 'uploads/' }); // for parsing multipart/form-data
 
-app.get('/', express.static(path.join(__dirname + '/client')));
+// first page
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+});
+app.use('/static', express.static(path.join(__dirname + '/client')));
 app.use('/swagger/basedoc.yaml',
   express.static(path.join(__dirname, 'swagger', 'basedoc.yaml')));
 
