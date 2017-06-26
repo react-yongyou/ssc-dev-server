@@ -13,6 +13,10 @@ const SwaggerExpress = require('swagger-express-mw');
 
 const app = express();
 
+// Express behind proxies
+// https://expressjs.com/en/guide/behind-proxies.html
+app.set('trust proxy', 'loopback');
+
 // HTTP request logger middleware for node.js
 app.use(morgan('combined'));
 
@@ -33,7 +37,7 @@ const upload = multer({ dest: 'uploads/' }); // for parsing multipart/form-data
 
 // first page
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 app.use('/static', express.static(path.join(__dirname + '/client')));
 app.use('/swagger/basedoc.yaml',
