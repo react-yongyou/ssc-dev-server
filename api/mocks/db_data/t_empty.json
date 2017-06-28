@@ -1,0 +1,40 @@
+{
+  "__meta__": {
+    "description": [
+      "A demo to show an empty db table."
+    ]
+  },
+  "head": [
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 40,
+      "lable": "主键",
+      "refinfocode": null,
+      "id": "id",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 50,
+      "lable": "编码",
+      "refinfocode": null,
+      "id": "code",
+      "digit": 0,
+      "refinfo": null
+    },
+    {
+      "enumdata": null,
+      "datatype": 0,
+      "length": 100,
+      "lable": "名称",
+      "refinfocode": null,
+      "id": "name",
+      "digit": 0,
+      "refinfo": null
+    }
+  ],
+  "body": []
+}

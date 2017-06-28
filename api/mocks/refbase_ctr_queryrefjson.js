@@ -4,7 +4,20 @@ const utils = require('./utils');
 
 /**
  * 参照API
+ * 接口：http://api.yyssc.org/refbase_ctr/queryRefJSON
+ * 参照Java后端API：http://git.yonyou.com/sscplatform/fc_doc/blob/master/refBase.md
  */
+
+/*
+Usage:
+$ curl -X POST \
+  http://172.20.4.220:8080/ficloud/refbase_ctr/queryRefJSON \
+  -H 'content-type: application/json' \
+  -d '{
+  "refCode": "dept",
+  "refType": "tree",
+}'
+*/
 
 module.exports = {
   post: post
