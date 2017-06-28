@@ -24,14 +24,24 @@ cd ssc-dev-server
 npm install
 ```
 
-启动服务器
+## 本地调试开发
+
+以开发模式启动服务器
 
 ```
-npm start
-DEBUG=swagger*,ssc* npm start # 显示调试信息
+npm run dev
+DEBUG=swagger*,ssc* npm run dev # 显示调试信息
 ```
 
 ## Production server
+
+以产品模式启动服务器，在后台运行，是pm2来管理node进程。
+
+```
+npm start
+```
+
+使用pm2来管理服务
 
 - Start web server `pm2 start devServer.js`
 - Stop web server `pm2 stop devServer`
