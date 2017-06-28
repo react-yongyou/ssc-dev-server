@@ -8,6 +8,7 @@ const config = require('./config');
 /**
  * - 0 正常
  * - 1 查询失败
+ * - 2 http://git.yonyou.com/sscplatform/FC/issues/105
  */
 const ERROR_TYPE = 0;
 
@@ -41,16 +42,20 @@ function get(req, res) {
         resObj.success = false;
         resObj.message = '对应该类型的数据表JSON文件不存在，请检查api/mocks/ctrl_data/目录';
       }
-      res.json(resObj);
       break;
     case 1:
       resObj.success = false;
       resObj.message = '查询失败。null';
       resObj.data = null;
       resObj.code = 0;
-      res.json(resObj);
+      break;
+    case 2:
+      // http://git.yonyou.com/sscplatform/FC/issues/105
+      resObj.message = '系统异常，请联系管理员';
+      resObj.success = false;
       break;
   }
+  res.json(resObj);
 }
 
 module.exports = {
