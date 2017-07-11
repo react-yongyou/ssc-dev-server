@@ -35,7 +35,13 @@ function fixConditions(condition) {
  */
 const ERROR_TYPE = 0;
 
-module.exports = function(req, res, options) {
+const defaultDBDir = `${__dirname}/../db_data`;
+
+module.exports = function(options) {
+  let dbDir = defaultDBDir;
+  if (options.dbDir) {
+    dbDir = options.dbDir;
+  }
 
   return function(req, res) {
 
@@ -62,7 +68,7 @@ module.exports = function(req, res, options) {
 
         // 根据基础档案类型，获取数据库中对应表的所有数据
         debug(`Open database file: t_${doctype}.json`);
-        const db = low(`${__dirname}/../db_data/t_${doctype}.json`);
+        const db = low(`${dbDir}/t_${doctype}.json`);
 
         // 为啥isEmpty返回的是Boolean对象?
         if (!db.isEmpty().valueOf()) {
