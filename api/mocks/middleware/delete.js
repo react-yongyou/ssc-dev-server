@@ -8,7 +8,13 @@ const config = require('../config');
 // 模仿网络和IO延迟
 const ENABLE_FAKE_IO_DELAY = true;
 
-module.exports = function(req, res, options) {
+const defaultDBDir = `${__dirname}/../db_data`;
+
+module.exports = function(options) {
+  let dbDir = defaultDBDir;
+  if (options.dbDir) {
+    dbDir = options.dbDir;
+  }
   return function(req, res) {
     // 模仿网络延迟以及IO延迟
     sleep(config.IO_DELAY);
@@ -21,7 +27,7 @@ module.exports = function(req, res, options) {
 
     // 根据基础档案类型，获取数据库中对应表的所有数据
     debug(`Open database file: t_${doctype}.json`);
-    const db = low(`${__dirname}/../db_data/t_${doctype}.json`);
+    const db = low(`${dbDir}/t_${doctype}.json`);
     const id = req.body.id;
 
     db.get('body')

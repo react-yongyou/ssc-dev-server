@@ -7,5 +7,7 @@ module.exports = {
 };
 
 function post(req, res) {
-  deleteMiddleware({})(req, res);
+  deleteMiddleware({
+    dbDir: `${__dirname}/db_data`,
+  })(req, res);
 }
