@@ -4,6 +4,7 @@ const sleep = require('system-sleep');
 const fs = require('fs');
 
 const utils = require('../utils');
+const ybbUtils = require('./utils');
 const config = require('../config');
 
 // 模仿网络和IO延迟
@@ -34,11 +35,20 @@ function post(req, res) {
     .find({id: id})
     .value();
 
-  res.setHeader('Content-disposition', 'attachment; filename=test.jpg');
-  res.setHeader('Content-type', 'image/jpeg');
-
   const filename = foundObj.modfiles[0].fs_filename;
   var file = `uploads/${filename}`;
-  var filestream = fs.createReadStream(file);
-  filestream.pipe(res);
+  ybbUtils.checkFileExists(file)
+    .then(isExist => {
+      if (isExist) {
+        res.setHeader('Content-disposition', 'attachment; filename=test.jpg');
+        res.setHeader('Content-type', 'image/jpeg');
+        var filestream = fs.createReadStream(file);
+        filestream.pipe(res);
+      } else {
+        res.json({
+          success: false,
+          message: 'file not found',
+        });
+      }
+    })
 }
