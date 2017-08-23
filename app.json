@@ -1,4 +1,5 @@
 {
+  "name": "ssc-dev-server",
   "script"          : "devServer.js",
   "error_file"      : "err.log",
   "out_file"        : "out.log",
