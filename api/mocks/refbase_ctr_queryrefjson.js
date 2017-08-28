@@ -59,6 +59,11 @@ function post(req, res) {
      */
     var data = [];
     body.forEach(item => {
+      if (req.body.condition) {
+        if (req.body.condition !== item.condition) {
+          return;
+        }
+      }
       data.push({
         code: item.code,
         name: item.name,
@@ -67,6 +72,7 @@ function post(req, res) {
         isLeaf: "false" // 为啥后端返回字符串类型
       });
     });
+
     resObj.data = data;
 
   } else {
